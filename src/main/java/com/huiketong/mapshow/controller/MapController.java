@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MapController {
 
-    @GetMapping("echarts")
-    public String echarts(){
-        return URL.ECHARTS;
+    @GetMapping("/")
+    public String gangzhaqu(){
+        return URL.GANGZHADISTRICTSTREETS;
     }
 }

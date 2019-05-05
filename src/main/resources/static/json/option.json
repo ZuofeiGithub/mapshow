@@ -1,0 +1,196 @@
+{
+  "title": {
+    "id":"title_id",
+    "show":false,
+    "text": "港闸区街道",
+    "link": "http://www.baidu.com",
+    "target": "blank",
+    "textStyle":{
+      "color": "#f00",
+      "fontStyle": "normal",
+      "fontWeight": "bold",
+      "fontFamily": "sans-serif",
+      "fontSize":20,
+      "lineHeight":56,
+      "width": 100,
+      "height": 100,
+      "textBorderColor": "transparent",
+      "textBorderWidth": 0,
+      "textShadowColor": "transparent",
+      "textShadowBlur": 0,
+      "textShadowOffsetX": 0,
+      "textShadowOffsetY": 0,
+      "rich": {
+        "user_define_style_name": {
+          "color": "#fff",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
+          "align": "left",
+          "verticalAlign": "top",
+          "lineHeight": 0,
+          "backgroundColor": "#123456",
+          "borderColor": "transparent",
+          "borderWidth": 0,
+          "borderRadius": 0,
+          "padding": [3,3,3,3],
+          "shadowColor": "transparent",
+          "shadowBlur": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "width": 100,
+          "height": 10,
+          "textBorderColor": "transparent",
+          "textBorderWidth": 0,
+          "textShadowColor": "transparent",
+          "textShadowBlur": 0,
+          "textShadowOffsetX": 0,
+          "textShadowOffsetY": 0
+        }
+
+      }
+
+    },
+    "subtext": "人口密度数据来自Wikipedia",
+    "sublink": "http://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E8%A1%8C%E6%94%BF%E5%8D%80%E5%8A%83#cite_note-12",
+    "subtarget": "blank",
+    "subtextStyle": {
+      "color": "#fff",
+      "fontStyle": "normal",
+      "fontWeight": "normal",
+      "fontFamily": "sans-serif",
+      "fontSize": 12,
+      "align": "left",
+      "verticalAlign": "top",
+      "lineHeight": 0,
+      "backgroundColor": "#123456",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "padding": [3,3,3,3],
+      "shadowColor": "transparent",
+      "shadowBlur": 0,
+      "shadowOffsetX": 0,
+      "shadowOffsetY": 0,
+      "width": 100,
+      "height": 10,
+      "textBorderColor": "transparent",
+      "textBorderWidth": 0,
+      "textShadowColor": "transparent",
+      "textShadowBlur": 0,
+      "textShadowOffsetX": 0,
+      "textShadowOffsetY": 0,
+      "rich": {
+        "user_define_style_name": {
+          "color": "#fff",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
+          "align": "left",
+          "verticalAlign": "top",
+          "lineHeight": 0,
+          "backgroundColor": "#123456",
+          "borderColor": "transparent",
+          "borderWidth": 0,
+          "borderRadius": 0,
+          "padding": [3,3,3,3],
+          "shadowColor": "transparent",
+          "shadowBlur": 0,
+          "shadowOffsetX": 0,
+          "shadowOffsetY": 0,
+          "width": 100,
+          "height": 10,
+          "textBorderColor": "transparent",
+          "textBorderWidth": 0,
+          "textShadowColor": "transparent",
+          "textShadowBlur": 0,
+          "textShadowOffsetX": 0,
+          "textShadowOffsetY": 0
+        }
+      }
+    },
+    "textAlign": "auto",
+    "textVerticalAlign": "auto",
+    "triggerEvent": false,
+    "padding": [4,4,4,4],
+    "itemGap": 10,
+    "zlevel": 0,
+    "z": 2,
+    "left": "auto",
+    "top": "auto",
+    "right": "auto",
+    "bottom": "auto",
+    "backgroundColor": "rgba(128, 128, 128, 0.5)",
+    "borderColor": "#ccc",
+    "borderWidth": 0,
+    "borderRadius": 0,
+    "shadowBlur": 0,
+    "shadowColor": "rgba(0,0,0,0.5)",
+    "shadowOffsetX": 0,
+    "shadowOffsetY": 0
+  },
+  "legend": {
+    "type": "plain"
+  },
+  "tooltip": {
+    "trigger": "item",
+    "formatter": "{b}<br/>{c} (p / km2)"
+  },
+  "toolbox": {
+    "show": true,
+    "orient": "vertical",
+    "left": "right",
+    "top": "center",
+    "feature": {
+      "dataView": {
+        "readOnly": false},
+      "restore": {},
+      "saveAsImage": {}
+    }
+  },
+  "visualMap": {
+    "min": 800,
+    "max": 50000,
+    "text":[
+      "High",
+      "Low"
+    ],
+    "realtime": false,
+    "calculable": true,
+    "inRange": {
+      "color": [
+        "lightskyblue",
+        "yellow", "orangered",
+        "#0f0",
+        "#c0ca0c",
+        "#7d1df3",
+        "#78a419"
+      ]
+    },
+    "show":false
+  },
+  "series": [
+    {
+      "name": "香港18区人口密度",
+      "type": "map",
+      "mapType": "HK",
+      "itemStyle":{
+        "normal":{
+          "label":{
+            "show":true}},
+        "emphasis":{
+          "label":{
+            "show":true}}
+      },
+      "tooltip": {
+        "show": false},
+      "data":[
+
+      ],
+      "nameMap": {
+      }
+    }
+  ]
+}

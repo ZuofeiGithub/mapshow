@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        #main{
+            margin: auto;
+            background: url("images/2.png");
+        }
+    </style>
+</head>
+<body>
+<div id="main" style="width: 900px;height:600px;"></div>
+</body>
+<!-- 引入 ECharts 文件 -->
+<script src="jquery/jquery-3.4.0.js"></script>
+<script src="echarts/echarts-dev.js"></script>
+<script src="echarts/china.js"></script>
+<script type="text/javascript">
+$(function () {
+    var myChart = echarts.init(document.getElementById('main'));
+    myChart.showLoading();
+    var street_option = {
+        title: { //图的标题
+            id:'gztitle', //组件 ID。默认不指定。指定则可用于在 option 或者 API 中引用组件。
+            show:true, //是否显示标题组件
+            text: '港闸区街道', //主标题文本，支持使用 \n 换行。
+            link:'http://www.baidu.com',//主标题文本超链接。
+            target:'blank',//指定窗口打开主标题超链接。'self'当前窗口
+            textStyle:{
+                color:'#f00',
+                fontStyle:'normal',
+                fontWeight:'bold',
+                fontFamily:'sans-serif',
+                fontSize:20,
+                lineHeight:20
+            },
+            subtext: '人口密度数据来自Wikipedia',
+            sublink: 'http://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E8%A1%8C%E6%94%BF%E5%8D%80%E5%8A%83#cite_note-12',
+            itemGap: 20,
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{b}<br/>{c} (p / km2)'
+        },
+        visualMap: {
+            min: 800,
+            max: 50000,
+            text:['High','Low'],
+            realtime: false,
+            calculable: true,
+            inRange: {
+                color: ['lightskyblue','yellow', 'orangered','#0f0','#c0ca0c','#7d1df3','#78a419']
+            },
+            show:false
+        },
+        legend:{
+
+        },
+        series: [
+            {
+                name: '香港18区人口密度',
+                type: 'map',
+                symbolSize: 20,
+                symbol: 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z',
+                symbolRotate: 35,
+                mapType: 'HK', // 自定义扩展图表类型
+                itemStyle:{
+                  
+                },
+                tooltip: {show: false},
+                data:[
+                    {name: '街道1', value: 20057.34},
+                    {name: '街道2', value: 15477.48},
+                    {name: '街道3', value: 31686.1},
+                    {name: '街道4', value: 6992.6},
+                    {name: '街道5', value: 44045.49},
+                    {name: '街道6', value: 40689.64},
+                    {name: '街道7', value: 37659.78},
+                    {name: '街道8', value: 45180.97},
+                    {name: '街道9', value: 55204.26},
+                    {name: '街道10', value: 21900.9},
+                    {name: '街道11', value: 4918.26},
+                ],
+                // 自定义名称映射
+                nameMap: {
+                    'Street1': '街道1',
+                    'Street2':'街道2',
+                    'Street3':'街道3',
+                    'Street4':'街道4',
+                    'Street5':'街道5',
+                    'Street6':'街道6',
+                    'Street7':'街道7',
+                    'Street8':'街道8',
+                    'Street9':'街道9',
+                    'Street10':'街道10',
+                    'Street11':'街道11',
+                },
+            }
+        ]
+    }
+
+    var street1_option = {
+        title: { //图的标题
+            id:'gztitle', //组件 ID。默认不指定。指定则可用于在 option 或者 API 中引用组件。
+            show:true, //是否显示标题组件
+            text: '街道办事处', //主标题文本，支持使用 \n 换行。
+            link:'http://www.baidu.com',//主标题文本超链接。
+            target:'blank',//指定窗口打开主标题超链接。'self'当前窗口
+            textStyle:{
+                color:'#f00',
+                fontStyle:'normal',
+                fontWeight:'bold',
+                fontFamily:'sans-serif',
+                fontSize:20,
+                lineHeight:20
+            },
+            subtext: '人口密度数据来自Wikipedia',
+            sublink: 'http://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E8%A1%8C%E6%94%BF%E5%8D%80%E5%8A%83#cite_note-12',
+            itemGap: 20,
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{b}<br/>{c} (p / km2)'
+        },
+        visualMap: {
+            min: 800,
+            max: 50000,
+            text:['High','Low'],
+            realtime: false,
+            calculable: true,
+            inRange: {
+                color: ['lightskyblue','yellow', 'orangered','#0f0','#c0ca0c','#7d1df3','#78a419']
+            },
+            show:false
+        },
+        series: [
+            {
+                name: '香港18区人口密度',
+                type: 'map',
+                mapType: 'GZ', // 自定义扩展图表类型
+                itemStyle:{
+                    normal:{label:{show:true}},
+                    emphasis:{label:{show:true}}
+                },
+                tooltip: {show: false},
+                data:[
+                    {name: '街道1', value: 20057.34},
+                    {name: '街道2', value: 15477.48},
+                    {name: '街道3', value: 31686.1},
+                    {name: '街道4', value: 6992.6},
+                    {name: '街道5', value: 44045.49},
+                    {name: '街道6', value: 40689.64},
+                    {name: '街道7', value: 37659.78},
+                    {name: '街道8', value: 45180.97},
+                    {name: '街道9', value: 55204.26},
+                    {name: '街道10', value: 21900.9},
+                ],
+                // 自定义名称映射
+                nameMap: {
+                    'Street1': '街道1',
+                    'Street2':'街道2',
+                    'Street3':'街道3',
+                    'Street4':'街道4',
+                    'Street5':'街道5',
+                    'Street6':'街道6',
+                    'Street7':'街道7',
+                    'Street8':'街道8',
+                    'Street9':'街道9',
+                    'Street10':'街道10',
+                },
+            }
+        ]
+    }
+
+    function loadMap(json,option,mapkey){
+        $.get(json, function (geoJson) {
+            myChart.hideLoading();
+            echarts.registerMap(mapkey, geoJson);//注册可用地图
+            myChart.clear();
+            myChart.setOption(option,true);
+        });
+    }
+
+    loadMap('json/gangzha_district_streets.json',street_option,'HK');
+    myChart.on('click',function (params) {
+        if(params.data.name == "街道1"){
+
+            loadMap('json/test.json',street1_option,'GZ');
+        }else if(params.data.name == "街道2"){
+
+        }else if(params.data.name == "街道3"){
+
+        }
+    });
+
+})
+</script>
+</html>
