@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+/*手机*/
+@media screen and (max-width: 600px) {
+    #main {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/*平板*/
+@media screen and (min-width: 600px) and (max-width: 960px) {
+    #main {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/*PC*/
+@media screen and (min-width: 960px) {
+    #main {
+        width: 100%;
+        height: 100%;
+    }
+}
+.back_home{
+    width: 100px;
+    height: 30px;
+    background-color: #1E9FFF;
+    font-size: 18px;
+    line-height: 30px;
+    color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    text-align: center;
+    display: none;
+}

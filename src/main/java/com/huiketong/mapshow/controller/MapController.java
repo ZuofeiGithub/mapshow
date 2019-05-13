@@ -11,4 +11,9 @@ public class MapController {
     public String gangzhaqu(){
         return URL.GANGZHADISTRICTSTREETS;
     }
+
+    @GetMapping("/china")
+    public String china(){
+        return URL.CHINA;
+    }
 }
