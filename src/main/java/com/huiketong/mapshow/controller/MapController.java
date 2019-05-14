@@ -16,4 +16,10 @@ public class MapController {
     public String china(){
         return URL.CHINA;
     }
+
+
+    @GetMapping("/jiangxi")
+    public String jiangxi(){
+        return URL.JIANGXI;
+    }
 }

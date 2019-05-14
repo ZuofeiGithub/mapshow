@@ -38,11 +38,13 @@ $(function () {
                 type: 'map',
                 map: 'GZ',
                 selectedMode: 'single',
+                hoverAnimation: false,
+                silent:true,
+                z: 100,
                 data: [
                     {
                         name: '天生港镇街道',
                         tooltip: {show: false},
-                        selected:true,
                         itemStyle: {
                             areaColor: '#fceeff',
                             borderWidth: 0,
@@ -51,45 +53,37 @@ $(function () {
                                 areaColor: '#fceeff',
                                 borderColor: '#fceeff',
                                 borderWidth: 0,
-                                shadowColor: 'rgba(0, 0, 0, 0.5)',
-                                shadowBlur: 10,
-                                shadowOffsetX: 0,
-                                shadowOffsetY: 20,
-                                opacity:1
                             },
-                            shadowColor: 'rgba(0, 0, 0, 0.5)',
-                            shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowOffsetY: 20,
+
                         },
                         label: {show: true, color: '#f00', fontSize: 18},
                     },
                     {
                         name: '永兴街道',
                         tooltip: {show: false},
-                        selected:true,
                         itemStyle: {
                             areaColor: '#ffe6e6',
-                            borderWidth: 2,
+                            borderWidth: 0,
                             borderColor: '#ffe6e6',
-                            emphasis: {areaColor: '#ffe6e6', borderColor: '#ffe6e6', borderWidth: 0},
-                            shadowColor: 'rgba(0, 0, 0, 0.5)',
-                            shadowBlur: 10,
-                            shadowOffsetX: 5,
-                            shadowOffsetY: 20,
+                            emphasis: {
+                                areaColor: '#ffe6e6',
+                                borderColor: '#ffe6e6',
+                                borderWidth: 0,
+                            },
                         },
-                        label: {show: true, color: '#f00', fontSize: 18}
+                        label: {show: true, color: '#f00', fontSize: 18},
                     },
                     {
                         name: '唐闸街道',
                         tooltip: {show: false},
                         itemStyle: {
                             areaColor: '#f5ffe3',
-                            borderWidth: 5,
+                            borderWidth: 0,
                             borderColor: '#f5ffe3',
-                            emphasis: {areaColor: '#f5ffe3', borderColor: '#f5ffe3', borderWidth: 2}
+                            emphasis: {areaColor: '#f5ffe3', borderColor: '#f5ffe3', borderWidth: 0},
+
                         },
-                        label: {show: true, color: '#f00', fontSize: 18}
+                        label: {show: true, color: '#f00', fontSize: 18},
                     },
                     {
                         name: '陈桥街道',
@@ -97,33 +91,33 @@ $(function () {
                         tooltip: {show: false},
                         itemStyle: {
                             areaColor: '#cdfcf6',
-                            borderWidth: 5,
+                            borderWidth: 0,
                             borderColor: '#cdfcf6',
-                            emphasis: {areaColor: '#cdfcf6', borderColor: '#cdfcf6', borderWidth: 2}
+                            emphasis: {areaColor: '#cdfcf6', borderColor: '#cdfcf6', borderWidth: 0},
                         },
-                        label: {show: true, color: '#f00', fontSize: 18}
+                        label: {show: true, color: '#f00', fontSize: 18},
                     },
                     {
                         name: '幸福街道',
                         tooltip: {show: false},
                         itemStyle: {
                             areaColor: '#ffeae9',
-                            borderWidth: 5,
+                            borderWidth: 0,
                             borderColor: '#ffeae9',
-                            emphasis: {areaColor: '#ffeae9', borderColor: '#ffeae9', borderWidth: 2}
+                            emphasis: {areaColor: '#ffeae9', borderColor: '#ffeae9', borderWidth: 0},
                         },
-                        label: {show: true, color: '#f00', fontSize: 18}
+                        label: {show: true, color: '#f00', fontSize: 18},
                     },
                     {
                         name: '秦灶街道',
                         tooltip: {show: false},
                         itemStyle: {
                             areaColor: '#fffed4',
-                            borderWidth: 5,
+                            borderWidth: 0,
                             borderColor: '#fffed4',
-                            emphasis: {areaColor: '#fffed4', borderColor: '#fffed4', borderWidth: 2}
+                            emphasis: {areaColor: '#fffed4', borderColor: '#fffed4', borderWidth: 0},
                         },
-                        label: {show: true, color: '#f00', fontSize: 18}
+                        label: {show: true, color: '#f00', fontSize: 18},
                     }
                 ],
                 // 自定义名称映射
@@ -135,7 +129,7 @@ $(function () {
                     'XF': '幸福街道',
                     'QZ': '秦灶街道',
                 }
-            }
+            },
         ]
     };
 
