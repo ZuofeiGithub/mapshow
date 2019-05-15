@@ -1,202 +1,149 @@
 $(function () {
     var myChart = echarts.init(document.getElementById('main'));
-    myChart.showLoading();
-    var option = {
-        title: {
-            text: '港闸区街道',
-            show: false
-        },
-        tooltip: {
-            trigger: 'item',
-            formatter: '{b}<br/>{c} (p / km2)'
-        },
-        toolbox: {
-            show: false,
-            orient: 'vertical',
-            left: 'right',
-            top: 'center',
-            feature: {
-                dataView: {readOnly: false},
-                restore: {},
-                saveAsImage: {}
+    var geoJson = {}
+    $.ajax({
+        url : 'json/zjg.json',
+        async : false,
+        dataType : 'json',
+        success : function(data){
+            echarts.registerMap('ls', data);
+            console.info(data)
+            var geoCoordMap = {
+                '治金工业区':[120.643338882,31.9787250105],
+                '现代农业示范园区':[120.79881073,31.8820563076],
+                '经济技术开发区':[120.553760732,31.83],
+                '张家港保税区':[120.43,31.970892279],
+                '塘桥镇':[120.665220625,31.8253475975],
+                '乐余镇':[120.751388101,31.9358733739],
+                '凤凰镇':[120.631224777,31.7692103578],
+                '南丰镇':[120.762973474,31.8558316614],
+                '大新镇':[120.544713024,31.9722253813],
             }
-        },
-        visualMap: {
-            min: 800,
-            max: 50000,
-            text: ['High', 'Low'],
-            realtime: false,
-            calculable: true,
-            inRange: {
-                color: ['#fceeff', '#ffe6e6', '#f5ffe3', '#cdfcf6', '#ffeae9', '#fffed4'],
-            },
-            show: false
-        },
-        series: [
-            {
-                name: '港闸区街道地图',
-                type: 'map',
-                map: 'GZ',
-                selectedMode: 'single',
-                hoverAnimation: false,
-                silent:true,
-                z: 100,
-                data: [
-                    {
-                        name: '天生港镇街道',
-                        tooltip: {show: false},
-                        itemStyle: {
-                            areaColor: '#fceeff',
-                            borderWidth: 0,
-                            borderColor: '#fceeff',
-                            emphasis: {
-                                areaColor: '#fceeff',
-                                borderColor: '#fceeff',
-                                borderWidth: 0,
-                            },
+            var data = [
+                {name:'治金工业区', value: 29},
+                {name:'现代农业示范园区', value: 23},
+                {name:'经济技术开发区', value: 137},
+                {name:'张家港保税区', value: 165},
+                {name:'塘桥镇', value: 70},
+                {name:'乐余镇', value: 48},
+                {name:'凤凰镇', value: 63},
+                {name:'南丰镇', value: 45},
+                {name:'大新镇', value: 20},
 
-                        },
-                        label: {show: true, color: '#f00', fontSize: 18},
-                    },
-                    {
-                        name: '永兴街道',
-                        tooltip: {show: false},
-                        itemStyle: {
-                            areaColor: '#ffe6e6',
-                            borderWidth: 0,
-                            borderColor: '#ffe6e6',
-                            emphasis: {
-                                areaColor: '#ffe6e6',
-                                borderColor: '#ffe6e6',
-                                borderWidth: 0,
-                            },
-                        },
-                        label: {show: true, color: '#f00', fontSize: 18},
-                    },
-                    {
-                        name: '唐闸街道',
-                        tooltip: {show: false},
-                        itemStyle: {
-                            areaColor: '#f5ffe3',
-                            borderWidth: 0,
-                            borderColor: '#f5ffe3',
-                            emphasis: {areaColor: '#f5ffe3', borderColor: '#f5ffe3', borderWidth: 0},
-
-                        },
-                        label: {show: true, color: '#f00', fontSize: 18},
-                    },
-                    {
-                        name: '陈桥街道',
-                        symbol: 'circle',
-                        tooltip: {show: false},
-                        itemStyle: {
-                            areaColor: '#cdfcf6',
-                            borderWidth: 0,
-                            borderColor: '#cdfcf6',
-                            emphasis: {areaColor: '#cdfcf6', borderColor: '#cdfcf6', borderWidth: 0},
-                        },
-                        label: {show: true, color: '#f00', fontSize: 18},
-                    },
-                    {
-                        name: '幸福街道',
-                        tooltip: {show: false},
-                        itemStyle: {
-                            areaColor: '#ffeae9',
-                            borderWidth: 0,
-                            borderColor: '#ffeae9',
-                            emphasis: {areaColor: '#ffeae9', borderColor: '#ffeae9', borderWidth: 0},
-                        },
-                        label: {show: true, color: '#f00', fontSize: 18},
-                    },
-                    {
-                        name: '秦灶街道',
-                        tooltip: {show: false},
-                        itemStyle: {
-                            areaColor: '#fffed4',
-                            borderWidth: 0,
-                            borderColor: '#fffed4',
-                            emphasis: {areaColor: '#fffed4', borderColor: '#fffed4', borderWidth: 0},
-                        },
-                        label: {show: true, color: '#f00', fontSize: 18},
+            ];
+            var convertData = function (data) {
+                var res = [];
+                for (var i = 0; i < data.length; i++) {
+                    var geoCoord = geoCoordMap[data[i].name];
+                    console.info(geoCoord);
+                    if (geoCoord) {
+                        res.push({
+                            name: data[i].name,
+                            value: geoCoord.concat(data[i].value)
+                        });
+                        console.info(res);
                     }
-                ],
-                // 自定义名称映射
-                nameMap: {
-                    'TSG': '天生港镇街道',
-                    'YX': '永兴街道',
-                    'TZ': '唐闸街道',
-                    'CQ': '陈桥街道',
-                    'XF': '幸福街道',
-                    'QZ': '秦灶街道',
                 }
-            },
-        ]
-    };
+                return res;
+            };
+            myChart.setOption(option = {
 
-    var option11 = {
-        series: [
-            {
-                name: '天生港镇街道',
-                type: 'map',
-                mapType: 'TSG', // 自定义扩展图表类型
-                itemStyle: {
-                    normal: {label: {show: true}},
-                    emphasis: {label: {show: true}}
+                backgroundColor: '#000',
+                tooltip: {
+                    formatter : function(e){
+                        if (typeof(e.value)[2] == "undefined") {
+                            return e.name;
+                        }else{
+                            return '企业数<br>'+e.name + ':' + e.value[2] + '家';
+                        }
+
+                    }
                 },
-                tooltip: {show: false},
-                data: [
-                    {name: 'Street1', value: 20057.34},
-
-                ],
-                // 自定义名称映射
-                nameMap: {
-                    'Street1': '街道1',
-
+                geo: {
+                    map: 'ls',
+                    show: true,
+                    label: {
+                        emphasis: {
+                            show: false
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            areaColor: '#f00',
+                            borderColor: '#fff',
+                            borderWidth: 2,
+                            shadowColor: '#000',
+                            shadowBlur: 20,
+                            shadowOffsetY:20
+                        }
+                    },
+                    zoom:1.5,
                 },
-            }
-        ]
-    }
-
-    function loadMap(json, option, mapkey) {
-        $.get(json, function (geoJson) {
-            myChart.hideLoading();
-            echarts.registerMap(mapkey, geoJson);//注册可用地图
-            myChart.clear();
-            myChart.setOption(option, true);
-        });
-    }
-
-    loadMap('json/gangzha_district_streets.json', option, 'GZ');
-    myChart.on('click', function (params) {
-        var top = params.event.event.offsetY;
-        var left = params.event.event.screenX;
-        if (params.data.name == "天生港镇街道") {
-            layer.ready(function () {
-                // loadMap('json/test.json',street1_option,'GZ');
-                layer.open({
-                    type: 2,
-                    //title: ['陈桥街道办事处', 'font-size:18px;background-color:#000;color:#fff'],
-                    title: false,
-                    maxmin: false,
-                    closeBtn: 0,
-                    offset: [top - 250, left - 300],
-                    shadeClose: true,
-                    anim: 3,
-                    area: ['600px', '500px'],
-                    content: 'http://layer.layui.com/test/welcome.html',
-                });
+                series: [{
+                    type: 'map',
+                    map: 'ls',
+                    geoIndex: 1,
+                    aspectScale: 0.75, //长宽比
+                    zoom:1.2,
+                    label: {
+                        emphasis: {
+                            show: false,
+                            textStyle: {
+                                color: '#05C3F9'
+                            }
+                        }
+                    },
+                    roam: false,
+                    itemStyle: {
+                        normal: {
+                            areaColor: 'transparent',
+                            borderColor: '#fff',
+                            borderWidth: 2
+                        },
+                        emphasis: {
+                            areaColor: '#C9E6FF',
+                            shadowColor: '#5AB2FE',
+                            shadowBlur: 20
+                        }
+                    },
+                    data: data,
+                },
+                    {
+                        name: '企业1数',
+                        type: 'scatter',
+                        coordinateSystem: 'geo',
+                        symbol: 'circle',
+                        symbolSize: function (val) {
+                            var num = val[2] / 2;
+                            if(num < 20){
+                                return 20
+                            }else{
+                                return num;
+                            }
+                        },
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: function(value){
+                                    return value.value[2]
+                                },
+                                textStyle: {
+                                    color: '#fff',
+                                    fontSize: 12,
+                                }
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: '#1C3E64', //标志颜色
+                            }
+                        },
+                        zlevel: 6,
+                        data: convertData(data),
+                    }
+                ]
             });
-        } else if (params.data.name == "永兴街道") {
-
-        } else if (params.data.name == "唐闸街道") {
-
-        } else if (params.data.name == "陈桥街道") {
-
-        } else if (params.data.name == "幸福街道") {
-
-        } else if (params.data.name == "秦灶街道") {
-
         }
-    });
+    })
 
 })
