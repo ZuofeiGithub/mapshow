@@ -48,7 +48,7 @@ $(function () {
             };
             myChart.setOption(option = {
 
-                backgroundColor: '#000',
+                backgroundColor: '#fff',
                 tooltip: {
                     formatter : function(e){
                         if (typeof(e.value)[2] == "undefined") {
@@ -70,14 +70,14 @@ $(function () {
                     itemStyle: {
                         normal: {
                             areaColor: '#f00',
-                            borderColor: '#fff',
+                            borderColor: '#000',
                             borderWidth: 2,
                             shadowColor: '#000',
-                            shadowBlur: 20,
+                            shadowBlur: 1,
                             shadowOffsetY:20
                         }
                     },
-                    zoom:1.5,
+                    zoom:1,
                 },
                 series: [{
                     type: 'map',
@@ -135,7 +135,7 @@ $(function () {
                         },
                         itemStyle: {
                             normal: {
-                                color: '#1C3E64', //标志颜色
+                                color: '#f00', //标志颜色
                             }
                         },
                         zlevel: 6,
