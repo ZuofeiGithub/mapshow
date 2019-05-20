@@ -746,7 +746,7 @@ $(function () {
                             data: data,
                         },
                         {
-                            name: '社区',
+                            name: '幸福街道',
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
@@ -796,7 +796,7 @@ $(function () {
             async: false,
             dataType: 'json',
             success: function (data) {
-                echarts.registerMap('ls', data);
+                echarts.registerMap('cq', data);
 
                 //地图上插的小旗子
                 var geoCoordMap = {
@@ -991,7 +991,7 @@ $(function () {
                         }
                     },
                     geo: {
-                        map: 'ls',
+                        map: 'cq',
                         show: true,
                         label: {
                             emphasis: {
@@ -1014,7 +1014,7 @@ $(function () {
                     series: [
                         {
                             type: 'map',
-                            map: 'ls',
+                            map: 'cq',
                             geoIndex: 1,
                             aspectScale: 0.75, //长宽比
                             zoom: 1,
@@ -1042,7 +1042,7 @@ $(function () {
                             data: data,
                         },
                         {
-                            name: '社区',
+                            name: '陈桥街道',
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
@@ -1092,7 +1092,7 @@ $(function () {
             async: false,
             dataType: 'json',
             success: function (data) {
-                echarts.registerMap('ls', data);
+                echarts.registerMap('tz', data);
 
                 //地图上插的小旗子
                 var geoCoordMap = {
@@ -1352,7 +1352,7 @@ $(function () {
                         }
                     },
                     geo: {
-                        map: 'ls',
+                        map: 'tz',
                         show: true,
                         label: {
                             emphasis: {
@@ -1375,7 +1375,7 @@ $(function () {
                     series: [
                         {
                             type: 'map',
-                            map: 'ls',
+                            map: 'tz',
                             geoIndex: 1,
                             aspectScale: 0.75, //长宽比
                             zoom: 1,
@@ -1403,7 +1403,7 @@ $(function () {
                             data: data,
                         },
                         {
-                            name: '社区',
+                            name: '唐闸街道',
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
@@ -1453,7 +1453,7 @@ $(function () {
             async: false,
             dataType: 'json',
             success: function (data) {
-                echarts.registerMap('ls', data);
+                echarts.registerMap('qz', data);
 
                 //地图上插的小旗子
                 var geoCoordMap = {
@@ -1648,7 +1648,7 @@ $(function () {
                         }
                     },
                     geo: {
-                        map: 'ls',
+                        map: 'qz',
                         show: true,
                         label: {
                             emphasis: {
@@ -1671,7 +1671,7 @@ $(function () {
                     series: [
                         {
                             type: 'map',
-                            map: 'ls',
+                            map: 'qz',
                             geoIndex: 1,
                             aspectScale: 0.75, //长宽比
                             zoom: 1,
@@ -1699,7 +1699,7 @@ $(function () {
                             data: data,
                         },
                         {
-                            name: '社区',
+                            name: '秦灶街道',
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
