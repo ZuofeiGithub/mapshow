@@ -1,6 +1,6 @@
 $(function () {
-    var myChart = echarts.init(document.getElementById('main'));
     $('#comeback').hide();
+    var myChart = echarts.init(document.getElementById('main'));
     /**
      * 加载开发区地图
      */
@@ -529,7 +529,11 @@ $(function () {
                 myChart.setOption(option, true);
                 myChart.off('click');
                 myChart.on('click', function (params) {
-
+                    for(var i = 0; i < xfArray.length;i++){
+                        if(params.name == xfArray[i]){
+                            openToolTips(params.name,"");
+                        }
+                    }
                 });
 
                 $('#comeback').show();
@@ -827,7 +831,11 @@ $(function () {
                 myChart.setOption(option, true);
                 myChart.off('click');
                 myChart.on('click', function (params) {
-
+                    for(var i = 0; i < xfArray.length;i++){
+                        if(params.name == xfArray[i]){
+                            openToolTips(params.name,"");
+                        }
+                    }
                 })
                 $('#comeback').show();
             }
@@ -1124,7 +1132,11 @@ $(function () {
                 myChart.setOption(option, true);
                 myChart.off('click');
                 myChart.on('click', function (params) {
-                    openToolTips(params.name,"");
+                    for(var i = 0; i < caArray.length;i++){
+                        if(params.name == caArray[i]){
+                            openToolTips(params.name,"");
+                        }
+                    }
                 })
                 $('#comeback').show();
             }
@@ -1486,7 +1498,11 @@ $(function () {
                 myChart.setOption(option, true);
                 myChart.off('click');
                 myChart.on('click', function (params) {
-
+                    for(var i = 0; i < tzArray.length;i++){
+                        if(params.name == tzArray[i]){
+                            openToolTips(params.name,"");
+                        }
+                    }
                 })
                 $('#comeback').show();
             }
@@ -1783,7 +1799,11 @@ $(function () {
                 myChart.setOption(option, true);
                 myChart.off('click');
                 myChart.on('click', function (params) {
-
+                    for(var i = 0; i < qzArray.length;i++){
+                        if(params.name == qzArray[i]){
+                            openToolTips(params.name,"");
+                        }
+                    }
                 })
                 $('#comeback').show();
             }
