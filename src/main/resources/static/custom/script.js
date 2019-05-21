@@ -8,11 +8,38 @@ $(function () {
         '八一村', '福利村', '隆兴佳园社区', '芦泾港村社区', '永兴村社区', '东港社区', '曙光村社区', '越江社区', '节制闸村社区', '永兴花苑社区', '永和佳苑社区', '窑墩坝村社区'];
     var e = window.screen.availWidth;
     var fontSize = e / 1082 * 12;
+
+    function browserRedirect() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    var isPhone = browserRedirect();
+    var mWidth,mHeight;
+    if(isPhone){
+        mWidth = 90;
+        mHeight = 83;
+    }else{
+        mWidth = 68;
+        mHeight = 88;
+    }
     function openToolTips(title,content) {
         var index = layer.open({
             title: false,
             closeBtn: 0,
-            area: ['80%', '60%'],
+            area: [mWidth+'%', mHeight+'%'],
             shade:0.5,
             shadeClose:0.5,
             type:2,
