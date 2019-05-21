@@ -5,7 +5,27 @@ $(function () {
      * 加载开发区地图
      */
     var kfqArray = ['国庆村', '五里村', '新白龙庙社区', '永兴佳园社区', '龙潭佳园社区', '龙潭村', '爱国村', '通遂社区', '泽生社区', '新闸村',
-        '八一村', '福利村', '隆兴佳园社区', '芦泾港村社区', '永兴社区', '东港社区', '曙光村社区', '越江社区', '节制闸村社区', '永兴花苑社区', '永和佳园社区', '窑墩坝村社区'];
+        '八一村', '福利村', '隆兴佳园社区', '芦泾港村社区', '永兴村社区', '东港社区', '曙光村社区', '越江社区', '节制闸村社区', '永兴花苑社区', '永和佳苑社区', '窑墩坝村社区'];
+    var e = window.screen.availWidth;
+    var fontSize = e / 1082 * 12;
+    function openToolTips(title,content) {
+        var index = layer.open({
+            title: false,
+            closeBtn: 0,
+            area: ['80%', '60%'],
+            shade:0.5,
+            shadeClose:0.5,
+            type:2,
+            content:'tooltips'
+            ,success:function(layero,i){
+                var body = layer.getChildFrame('body',i);
+                console.log(body);
+                body.find('#title p').html(title);
+                body.find('#content p').html(content);
+            }
+        })
+        layer.iframeAuto(index)
+    }
 
     function loadKFQMap() {
         $.ajax({
@@ -20,7 +40,7 @@ $(function () {
                     '国庆村': [120.76498031616211, 32.06133699866369],
                     '五里村': [120.7697868347168, 32.07166546974275],
                     '新白龙庙社区': [120.78042984008788, 32.057990905800125],
-                    '永兴佳园社区': [120.80686569213866, 32.04518733365799],
+                    '永兴花园社区': [120.80686569213866, 32.04518733365799],
                     '龙潭佳园社区': [120.78351974487305, 32.04722438541606],
                     '龙潭村': [120.77356338500977, 32.04736988737824],
                     '爱国村': [120.76807022094725, 32.04111309413573],
@@ -31,13 +51,13 @@ $(function () {
                     '福利村': [120.75468063354492, 32.060609597582975],
                     '隆兴佳园社区': [120.77802658081056, 32.03863936024243],
                     '芦泾港村社区': [120.78317642211913, 32.03063564560882],
-                    '永兴社区': [120.79639434814452, 32.02728843023575],
+                    '永兴村社区': [120.79639434814452, 32.02728843023575],
                     '东港社区': [120.80566406250001, 32.018992630152795],
                     '曙光村社区': [120.80875396728514, 32.026124152736784],
                     '越江社区': [120.81785202026367, 32.028743756298226],
                     '节制闸村社区': [120.82471847534181, 32.035874519734655],
                     '永兴花苑社区': [120.81235885620117, 32.03529243741029],
-                    '永和佳园社区': [120.80171585083009, 32.03791177872976],
+                    '永和佳苑社区': [120.80171585083009, 32.03791177872976],
                     '窑墩坝村社区': [120.79622268676756, 32.04998888314202],
                 }
                 var data = [
@@ -87,7 +107,7 @@ $(function () {
                         }
                     },
                     {
-                        name: '永兴佳园社区',
+                        name: '永兴花园社区',
                         value: 10,
                         itemStyle: {
                             areaColor: '#f3ffe3',
@@ -252,7 +272,7 @@ $(function () {
                         }
                     },
                     {
-                        name: '永兴社区',
+                        name: '永兴村社区',
                         value: 10,
                         itemStyle: {
                             areaColor: '#def9f0',
@@ -342,7 +362,7 @@ $(function () {
                         }
                     },
                     {
-                        name: '永和佳园社区',
+                        name: '永和佳苑社区',
                         value: 10,
                         itemStyle: {
                             areaColor: '#f3ffe3',
@@ -454,7 +474,7 @@ $(function () {
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
-                            symbolSize: [30, 30],
+                            symbolSize: [20, 20],
                             label: {
                                 normal: {
                                     show: true,
@@ -464,7 +484,7 @@ $(function () {
                                     position: 'bottom',
                                     textStyle: {
                                         color: '#000',
-                                        fontSize: 10,
+                                        fontSize:fontSize,
                                     }
                                 }
                             },
@@ -480,9 +500,11 @@ $(function () {
                 };
                 myChart.clear();
                 myChart.setOption(option, true);
+                myChart.off('click');
                 myChart.on('click', function (params) {
 
                 });
+
                 $('#comeback').show();
             }
 
@@ -750,7 +772,7 @@ $(function () {
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
-                            symbolSize: [30, 30],
+                            symbolSize: [20, 20],
                             label: {
                                 normal: {
                                     show: true,
@@ -760,7 +782,7 @@ $(function () {
                                     position: 'bottom',
                                     textStyle: {
                                         color: '#000',
-                                        fontSize: 10,
+                                        fontSize: fontSize,
                                     }
                                 }
                             },
@@ -776,6 +798,7 @@ $(function () {
                 };
                 myChart.clear();
                 myChart.setOption(option, true);
+                myChart.off('click');
                 myChart.on('click', function (params) {
 
                 })
@@ -1046,7 +1069,7 @@ $(function () {
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
-                            symbolSize: [30, 30],
+                            symbolSize: [20, 20],
                             label: {
                                 normal: {
                                     show: true,
@@ -1056,7 +1079,7 @@ $(function () {
                                     position: 'bottom',
                                     textStyle: {
                                         color: '#000',
-                                        fontSize: 10,
+                                        fontSize: fontSize
                                     }
                                 }
                             },
@@ -1072,8 +1095,9 @@ $(function () {
                 };
                 myChart.clear();
                 myChart.setOption(option, true);
+                myChart.off('click');
                 myChart.on('click', function (params) {
-
+                    openToolTips(params.name,"");
                 })
                 $('#comeback').show();
             }
@@ -1407,7 +1431,7 @@ $(function () {
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
-                            symbolSize: [30, 30],
+                            symbolSize: [20, 20],
                             label: {
                                 normal: {
                                     show: true,
@@ -1417,7 +1441,7 @@ $(function () {
                                     position: 'bottom',
                                     textStyle: {
                                         color: '#000',
-                                        fontSize: 10,
+                                        fontSize: fontSize,
                                     }
                                 }
                             },
@@ -1433,6 +1457,7 @@ $(function () {
                 };
                 myChart.clear();
                 myChart.setOption(option, true);
+                myChart.off('click');
                 myChart.on('click', function (params) {
 
                 })
@@ -1703,7 +1728,7 @@ $(function () {
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
-                            symbolSize: [30, 30],
+                            symbolSize: [20, 20],
                             label: {
                                 normal: {
                                     show: true,
@@ -1713,7 +1738,7 @@ $(function () {
                                     position: 'bottom',
                                     textStyle: {
                                         color: '#000',
-                                        fontSize: 10,
+                                        fontSize: fontSize,
                                     }
                                 }
                             },
@@ -1729,6 +1754,7 @@ $(function () {
                 };
                 myChart.clear();
                 myChart.setOption(option, true);
+                myChart.off('click');
                 myChart.on('click', function (params) {
 
                 })
@@ -1941,7 +1967,7 @@ $(function () {
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
-                            symbolSize: [30, 30],
+                            symbolSize: [20, 20],
                             label: {
                                 normal: {
                                     show: true,
@@ -1951,7 +1977,7 @@ $(function () {
                                     position: 'bottom',
                                     textStyle: {
                                         color: '#000',
-                                        fontSize: 18,
+                                        fontSize: fontSize,
                                     }
                                 }
                             },
@@ -1967,6 +1993,7 @@ $(function () {
                 };
                 myChart.clear();
                 myChart.setOption(option, true);
+                myChart.off('click');
                 myChart.on('click', function (params) {
                    //加载对应的街道
                     for(var i = 0; i < gzqArray.length;i++){
@@ -1984,6 +2011,7 @@ $(function () {
 
 
     loadGZQMap();
+    window.onresize = myChart.resize;
     $('#comeback').click(function () {
         loadGZQMap();
     })

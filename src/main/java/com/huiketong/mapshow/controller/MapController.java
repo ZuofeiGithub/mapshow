@@ -22,4 +22,9 @@ public class MapController {
     public String jiangxi(){
         return URL.JIANGXI;
     }
+
+    @GetMapping("/tooltips")
+    public String toolTips(){
+        return URL.TOOLTIPS;
+    }
 }

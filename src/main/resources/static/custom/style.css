@@ -14,8 +14,10 @@ html, body {
 }
 #comeback img{
     position: fixed;
-    top:100px;
-    left: 100px;
+    top:5%;
+    left: 3%;
+    width:42px;
+    height: 39px;
     z-index: 999999;
 }
 /*手机*/
