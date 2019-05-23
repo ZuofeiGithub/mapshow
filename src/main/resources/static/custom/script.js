@@ -881,12 +881,12 @@ $(function () {
                     '树北村': [120.81579208374023, 32.12910537866883],
                     '天玺社区': [120.81888198852539, 32.116602550956046],
                     '丽都社区': [120.83707809448241, 32.10918727429358],
-                    '天和社区': [120.81579208374023, 32.10758782193262],
+                    '天和社区': [120.8163070678711,32.10838755161535],
                     '丽康社区': [120.82403182983397, 32.098717623104534],
                     '五里树社区': [120.80240249633789, 32.103807186796196],
                     '育爱村': [120.79072952270508, 32.11602098239759],
                     '集成村': [120.77545166015625, 32.09173718886837],
-                    '仁和社区': [120.79879760742188, 32.090573731307344],
+                    '仁和社区': [120.80008506774902,32.092464342320646],
                     '河口村': [120.79622268676756, 32.08519254738235]
 
                 }
@@ -2051,7 +2051,7 @@ $(function () {
                             borderColor: '#A4FDFF',
                             emphasis: {
                                 areaColor: '#005CD7',
-                                borderColor: '#A4FDFF',
+                                borderColor: '#b0fff',
                                 borderWidth: 1,
                             },
 
@@ -2066,7 +2066,7 @@ $(function () {
                             borderColor: '#A4FDFF',
                             emphasis: {
                                 areaColor: '#005CD7',
-                                borderColor: '#A4FDFF',
+                                borderColor: '#b0fff',
                                 borderWidth: 1,
                             },
 
@@ -2081,7 +2081,7 @@ $(function () {
                             borderColor: '#A4FDFF',
                             emphasis: {
                                 areaColor: '#005CD7',
-                                borderColor: '#A4FDFF',
+                                borderColor: '#b0fff',
                                 borderWidth: 1,
                             },
 
@@ -2096,7 +2096,7 @@ $(function () {
                             borderColor: '#A4FDFF',
                             emphasis: {
                                 areaColor: '#005CD7',
-                                borderColor: '#A4FDFF',
+                                borderColor: '#b0fff',
                                 borderWidth: 1,
                             },
 
@@ -2111,7 +2111,7 @@ $(function () {
                             borderColor: '#A4FDFF',
                             emphasis: {
                                 areaColor: '#005CD7',
-                                borderColor: '#A4FDFF',
+                                borderColor: '#b0fff',
                                 borderWidth: 1,
                             },
 
@@ -2153,9 +2153,9 @@ $(function () {
                         },
                         itemStyle: {
                             normal: {
-                                areaColor: '#019CFB',
-                                borderColor: '#A4FDFF',
-                                borderWidth: 1,
+                                // areaColor: '#019CFB',
+                                // borderColor: '#A4FDFF',
+                                // borderWidth: 1,
                                 // shadowColor: '#998262',
                                 // shadowBlur: shadowBlur,
                                 // shadowOffsetY: 20,
