@@ -870,7 +870,7 @@ $(function () {
 
     function loadCQMap() {
         $.ajax({
-            url: 'json/newchenqiao.json',
+            url: 'json/cq.json',
             async: false,
             dataType: 'json',
             success: function (data) {
