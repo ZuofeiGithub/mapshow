@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>json数组反转</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+</head>
+<body>
+<div class="layui-container">
+    <div class="layui-row">
+        <form class="layui-form" action="" lay-filter="example">
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">原数组对象</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入" class="layui-textarea" name="array" style="width: 100%;height: 600px"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit="" lay-filter="demo1">立即反转</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="layui-row">
+        <textarea class="layui-textarea" id="reverseArrayId" style="width: 100%;height: 600px"></textarea>
+    </div>
+</div>
+
+<script src="/layui/layui.js"></script>
+<script>
+    //一般直接写在一个js文件中
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+            ,form = layui.form;
+
+        form.on('submit(demo1)', function(data){
+            var field = data.field;
+
+            var arrayStr = field.array;
+            var array = eval(arrayStr);
+            console.log(array);
+            function getString( objarr ){
+                var typeNO = objarr.length;
+                var tree = "[";
+                for (var i = 0 ;i < typeNO ; i++){
+                    tree += "[";
+                    tree += objarr[i][0]+",";
+                    tree += objarr[i][1];
+                    tree += "]";
+                    if(i<typeNO-1){
+                        tree+=",";
+                    }
+                }
+                tree+="]";
+                return tree;
+            }
+            document.getElementById("reverseArrayId").innerHTML=getString(array.reverse());
+            return false;
+        });
+
+    });
+</script>
+</body>
+</html>
