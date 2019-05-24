@@ -39,11 +39,15 @@ $(function () {
     }
 
     function openToolTips(title, content) {
-        var index = layer.open({
+        // layer.style(,{
+        //     "opacity": 0.5
+        // });
+        layer.open({
             title: false,
             closeBtn: 0,
             area: [mWidth + '%', mHeight + '%'],
             shade: 0.5,
+            skin:'myskin',
             shadeClose: 0.5,
             type: 2,
             content: 'tooltips'
@@ -53,7 +57,6 @@ $(function () {
                 body.find('#content p').html(content);
             }
         })
-        layer.iframeAuto(index)
     }
 
     /**
@@ -568,7 +571,6 @@ $(function () {
             dataType: 'json',
             success: function (data) {
                 echarts.registerMap('xf', data);
-                console.log(data);
                 //地图上插的小旗子
                 var geoCoordMap = {
                     '转水社区': [120.86334228515624, 32.11456704479077],
@@ -911,12 +913,12 @@ $(function () {
                         value: 10,
                         itemStyle: {
                             areaColor: '#019CFB',
-                            borderWidth: 0,
+                            borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
                                 areaColor: '#005CD7',
                                 borderColor: '#A4FDFF',
-                                borderWidth: 0,
+                                borderWidth: 1,
                             },
 
                         }
@@ -941,12 +943,12 @@ $(function () {
                         value: 10,
                         itemStyle: {
                             areaColor: '#019CFB',
-                            borderWidth: 0,
+                            borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
                                 areaColor: '#005CD7',
                                 borderColor: '#A4FDFF',
-                                borderWidth: 0,
+                                borderWidth: 1,
                             },
 
                         }
@@ -1887,7 +1889,7 @@ $(function () {
             async: false,
             dataType: 'json',
             success: function (data) {
-                echarts.registerMap('gzq', data);
+                echarts.registerMap('main', data);
                 var geoCoordMap = {
                     '港闸区': [ 120.81836700439453,32.07530197765318],
                 }
@@ -1934,7 +1936,7 @@ $(function () {
                         }
                     },
                     geo: {
-                        map: 'gzq',
+                        map: 'main',
                         show: true,
                         label: {
                             emphasis: {
@@ -1952,12 +1954,12 @@ $(function () {
                                 // shadowOffsetX: 20
                             }
                         },
-                        zoom: 1,
+                        zoom: 1.0,
                     },
                     series: [
                         {
                             type: 'map',
-                            map: 'gzq',
+                            map: 'main',
                             geoIndex: 1,
                             aspectScale: 0.75, //长宽比
                             zoom: 1,
@@ -1982,7 +1984,7 @@ $(function () {
                                     // shadowBlur: emphasisshadowBlur
                                 }
                             },
-                            data: data,
+                            data: data
                         },
                         {
                             name: '街道数',
@@ -2244,5 +2246,9 @@ $(function () {
     window.onresize = myChart.resize;
     $('#comeback').click(function () {
         loadGZQMap();
+    })
+
+    $('#main_btn').click(function (e) {
+        loadMainMap();
     })
 })
