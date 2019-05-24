@@ -38,24 +38,48 @@ $(function () {
         fontSize = e / 1082*12
     }
 
+    // function openToolTips(title, content) {
+    //     layer.style(layer.open({
+    //         title: false,
+    //         closeBtn: 0,
+    //         area: [mWidth + '%', mHeight + '%'],
+    //         shade: 0.5,
+    //         skin:'myskin',
+    //         shadeClose: 0.5,
+    //         type: 2,
+    //         content: 'tooltips'
+    //         , success: function (layero, i) {
+    //             var body = layer.getChildFrame('body', i);
+    //             body.find('#title p').html(title);
+    //             body.find('#content p').html(content);
+    //         }
+    //     }),{
+    //         "opacity": 0.8
+    //     });
+    //
+    // }
+
     function openToolTips(title, content) {
-        layer.style(layer.open({
+        console.log(title);
+        var index = layer.open({
             title: false,
             closeBtn: 0,
             area: [mWidth + '%', mHeight + '%'],
             shade: 0.5,
             skin:'myskin',
             shadeClose: 0.5,
-            type: 2,
-            content: 'tooltips'
+            type: 1,
+            content: '<div id="tooltips">\n' +
+                '<img src="/images/tooltipsbk.png" width="100%" height="100%" style="position: absolute;opacity: 1 !important;"/>'+
+                '<p style="font-size: 30px ;text-align: center;color: red">HelloWorld</p>\n' +
+                '</div>'
             , success: function (layero, i) {
                 var body = layer.getChildFrame('body', i);
                 body.find('#title p').html(title);
                 body.find('#content p').html(content);
             }
-        }),{
-            "opacity": 0.8
         });
+        layer.style(index,{opacity:0.2})
 
     }
 
