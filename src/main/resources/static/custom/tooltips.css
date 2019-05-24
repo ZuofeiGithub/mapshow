@@ -15,13 +15,14 @@ img{
 ::-webkit-scrollbar{
     display:none;
 }
+
 /*通用样式*/
 /*手机*/
 @media screen and (max-width:600px){
     .bkimag{
         width: 100%;
         height: 100%;
-        background: url("/images/tooltipsborders.png") no-repeat fixed top;
+        background: url("/images/tooltipsbk.png") no-repeat fixed top;
         -moz-background-size:100% 100%;
         -webkit-background-size:100% 100%;
         -o-background-size:100% 100%;
@@ -61,7 +62,7 @@ img{
     .bkimag{
         width: 100%;
         height: 100%;
-        background: url("/images/tooltipsborders.png") no-repeat fixed top;
+        background: url("/images/tooltipsbk.png") no-repeat fixed top;
         -moz-background-size:100% 100%;
         -webkit-background-size:100% 100%;
         -o-background-size:100% 100%;
@@ -99,21 +100,10 @@ img{
 }
 /*PC*/
 @media screen and (min-width:960px){
-    .bkmain{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: url("/images/toolbk.png") no-repeat fixed top;
-        -moz-background-size:100% 100%;
-        -webkit-background-size:100% 100%;
-        -o-background-size:100% 100%;
-        background-size:100% 100%;
-    }
     .bkimag{
         width: 100%;
         height: 100%;
-        background: url("/images/tooltipsborders.png") no-repeat fixed top;
-        background-color: rgba(255,255,255,0.1);
+        background: url("/images/tooltipsbk.png") no-repeat fixed top;
         -moz-background-size:100% 100%;
         -webkit-background-size:100% 100%;
         -o-background-size:100% 100%;

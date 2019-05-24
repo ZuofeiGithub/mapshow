@@ -39,10 +39,7 @@ $(function () {
     }
 
     function openToolTips(title, content) {
-        // layer.style(,{
-        //     "opacity": 0.5
-        // });
-        layer.open({
+        layer.style(layer.open({
             title: false,
             closeBtn: 0,
             area: [mWidth + '%', mHeight + '%'],
@@ -56,7 +53,10 @@ $(function () {
                 body.find('#title p').html(title);
                 body.find('#content p').html(content);
             }
-        })
+        }),{
+            "opacity": 0.8
+        });
+
     }
 
     /**
