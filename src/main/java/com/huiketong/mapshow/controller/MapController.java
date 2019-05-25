@@ -39,7 +39,7 @@ public class MapController {
         return URL.TOOLTIPS;
     }
 
-    @PostMapping("/community_info")
+    @PostMapping("/api/community_info")
     @ResponseBody
     public BaseJsonResp communityInfo(String name){
         BaseJsonResp resp = new BaseJsonResp();

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登陆</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <style>
+        body{
+            background: url("/images/background.png");
+        }
+        .layui-form-pane .layui-input-block {
+            margin-left: 0px;
+            left: -1px;
+        }
+
+        /*PC*/
+        @media screen and (min-width: 960px) {
+            .main_title{
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 70%;
+                margin: 10% 15%;
+            }
+            .main_title p{
+                font-style: normal;
+                font-size: 3vw;
+                color: #a3fcff;
+                text-align: center;
+            }
+            .main_title i{
+                font-style: normal;
+                font-size: 1.3vw;
+                color: #a3fcff;
+                text-align: center;
+            }
+            .login_panel{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: 300px;
+                margin-left: -310px;
+                width: 620px;
+                height: 433px;
+                background: url("/images/login_border.png") no-repeat top;
+                -moz-background-size:100% 100%;
+                -webkit-background-size:100% 100%;
+                -o-background-size:100% 100%;
+                background-size:100% 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .layui-input{
+                border: #a3fcff solid 2px;
+                height: 40px;
+            }
+            .layui-input:hover{
+                border: #1E9FFF solid 2px;
+            }
+            .layui-form{
+                margin: 0 100px;
+            }
+            .title{
+                font-size: 2vw;
+                color: white;
+                text-align: center;
+                padding-bottom: 20px;
+            }
+            .layui-btn{
+                background-color: #74cbce;
+                width: 80%;
+                margin: 20px 10%;
+            }
+        }
+
+        /*手机*/
+        @media screen and (max-width: 600px) {
+            .main_title{
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 80%;
+                margin-top: 30%;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+            .main_title p{
+                font-style: normal;
+                font-size: 5vw;
+                color: #a3fcff;
+                text-align: center;
+            }
+            .main_title i{
+                font-style: normal;
+                font-size: 0.5vw;
+                color: #a3fcff;
+                text-align: center;
+            }
+            .login_panel{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: 200px;
+                margin-left: -150px;
+                width: 300px;
+                height: 300px;
+                background: url("/images/login_mobile_border.png") no-repeat top;
+                -moz-background-size:100% 100%;
+                -webkit-background-size:100% 100%;
+                -o-background-size:100% 100%;
+                background-size:100% 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .layui-input{
+                border: #a3fcff solid 2px;
+                height: 30px;
+            }
+            .layui-input:hover{
+                border: #1E9FFF solid 2px;
+            }
+            .layui-form{
+                margin: 0 10px;
+            }
+            .title{
+                font-size: 2vw;
+                color: white;
+                text-align: center;
+                padding-bottom: 34px;
+            }
+            .layui-btn{
+                background-color: #74cbce;
+                width: 80%;
+                margin: 10% 10%;
+            }
+        }
+
+        /*平板*/
+        @media screen and (min-width: 600px) and (max-width: 960px) {
+            .main_title{
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 70%;
+                margin: 10% 15%;
+            }
+            .main_title p{
+                font-style: normal;
+                font-size: 3vw;
+                color: #a3fcff;
+                text-align: center;
+            }
+            .main_title i{
+                font-style: normal;
+                font-size: 1.3vw;
+                color: #a3fcff;
+                text-align: center;
+            }
+            .login_panel{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: 300px;
+                margin-left: -310px;
+                width: 620px;
+                height: 433px;
+                background: url("/images/login_border.png") no-repeat top;
+                -moz-background-size:100% 100%;
+                -webkit-background-size:100% 100%;
+                -o-background-size:100% 100%;
+                background-size:100% 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .layui-input{
+                border: #a3fcff solid 2px;
+                height: 40px;
+            }
+            .layui-input:hover{
+                border: #1E9FFF solid 2px;
+            }
+            .layui-form{
+                margin: 0 100px;
+            }
+            .title{
+                font-size: 2vw;
+                color: white;
+                text-align: center;
+                padding-bottom: 20px;
+            }
+            .layui-btn{
+                background-color: #74cbce;
+                width: 80%;
+                margin: 20px 10%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="layui-container">
+    <div class="main_title"><p>党微矩阵系统用户登录</p><i>DANG WEI JU ZHEN XI TONG YONG HU DENG LU</i></div>
+    <div class="layui-row login_panel">
+        <form class="layui-form layui-form-pane" action="">
+            <div class="title">用户登陆</div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <input type="text" name="username" lay-verify="username" autocomplete="off" placeholder="账号"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <input type="password"  name="password" lay-verify="password" autocomplete="off" placeholder="密码"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid" lay-submit="" lay-filter="login">登陆</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+<script src="/layui/layui.js"></script>
+<script>
+    layui.use(['form', 'layedit'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit,
+            $ = layui.$;
+
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            username: function(value){
+                if(value == ''){
+                    return '请输入用户名';
+                }
+            }
+            ,password: function(value){
+                if(value == ''){
+                    return '请输入密码'
+                }
+            }
+        });
+        //监听提交
+        form.on('submit(login)', function(data){
+            var field = data.field;
+            $.post('login',field,function (resp) {
+                if(resp.code == 0){
+                    layer.msg(resp.msg);
+                    return  $(location).attr('href', '/modifyinfo');
+                }else{
+                    layer.msg(resp.msg);
+                }
+            })
+            return false;
+        });
+
+    });
+
+</script>
+</html>

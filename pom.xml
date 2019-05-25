@@ -41,7 +41,6 @@
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
         </dependency>
-
         <!--修改之后实时看到效果-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

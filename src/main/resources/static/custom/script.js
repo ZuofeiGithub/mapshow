@@ -35,54 +35,26 @@ $(function () {
     } else {
         mWidth = 68;
         mHeight = 88;
-        fontSize = e / 1082*12
+        fontSize = e / 1082 * 10
     }
 
-    // function openToolTips(title, content) {
-    //     layer.style(layer.open({
-    //         title: false,
-    //         closeBtn: 0,
-    //         area: [mWidth + '%', mHeight + '%'],
-    //         shade: 0.5,
-    //         skin:'myskin',
-    //         shadeClose: 0.5,
-    //         type: 2,
-    //         content: 'tooltips'
-    //         , success: function (layero, i) {
-    //             var body = layer.getChildFrame('body', i);
-    //             body.find('#title p').html(title);
-    //             body.find('#content p').html(content);
-    //         }
-    //     }),{
-    //         "opacity": 0.8
-    //     });
-    //
-    // }
-
     function openToolTips(title, content) {
-        console.log(title);
-        var index = layer.open({
+      layer.open({
             title: false,
             closeBtn: 0,
             area: [mWidth + '%', mHeight + '%'],
-            shade: 0.5,
-            skin:'myskin',
+            shade: 0.8,
             shadeClose: 0.5,
-            type: 1,
-            content: '<div id="tooltips">\n' +
-                '<img src="/images/tooltipsbk.png" width="100%" height="100%" style="position: absolute;opacity: 1 !important;"/>'+
-                '<p style="font-size: 30px ;text-align: center;color: red">HelloWorld</p>\n' +
-                '</div>'
+            type: 2,
+            content: 'tooltips'
             , success: function (layero, i) {
                 var body = layer.getChildFrame('body', i);
                 body.find('#title p').html(title);
                 body.find('#content p').html(content);
             }
         });
-        layer.style(index,{opacity:0.2})
 
     }
-
     /**
      * 加载开发区地图
      */
@@ -102,7 +74,7 @@ $(function () {
                     '国庆村': [120.76498031616211, 32.06133699866369],
                     '五里村': [120.7697868347168, 32.07166546974275],
                     '新白龙庙社区': [120.78042984008788, 32.057990905800125],
-                    '永兴花园社区': [120.80686569213866, 32.04518733365799],
+                    '永兴花苑社区': [120.81235885620117, 32.03529243741029],
                     '龙潭佳园社区': [120.78351974487305, 32.04722438541606],
                     '龙潭村': [120.77356338500977, 32.04736988737824],
                     '爱国村': [120.76807022094725, 32.04111309413573],
@@ -118,7 +90,7 @@ $(function () {
                     '曙光村社区': [120.80875396728514, 32.026124152736784],
                     '越江社区': [120.81785202026367, 32.028743756298226],
                     '节制闸村社区': [120.82471847534181, 32.035874519734655],
-                    '永兴花苑社区': [120.81235885620117, 32.03529243741029],
+                    '永兴佳园社区': [120.80686569213866, 32.04518733365799],
                     '永和佳苑社区': [120.80171585083009, 32.03791177872976],
                     '窑墩坝村社区': [120.79622268676756, 32.04998888314202],
                 }
@@ -127,7 +99,7 @@ $(function () {
                         name: '国庆村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -142,7 +114,7 @@ $(function () {
                         name: '五里村',
                         value: 22,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -157,7 +129,7 @@ $(function () {
                         name: '新白龙庙社区',
                         value: 14,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -169,10 +141,10 @@ $(function () {
                         }
                     },
                     {
-                        name: '永兴花园社区',
+                        name: '永兴佳园社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -187,7 +159,7 @@ $(function () {
                         name: '龙潭佳园社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -202,7 +174,7 @@ $(function () {
                         name: '龙潭村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -217,7 +189,7 @@ $(function () {
                         name: '爱国村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -232,7 +204,7 @@ $(function () {
                         name: '通遂社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -247,7 +219,7 @@ $(function () {
                         name: '泽生社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -262,7 +234,7 @@ $(function () {
                         name: '新闸村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -277,7 +249,7 @@ $(function () {
                         name: '八一村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -292,7 +264,7 @@ $(function () {
                         name: '福利村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -307,7 +279,7 @@ $(function () {
                         name: '隆兴佳园社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -322,7 +294,7 @@ $(function () {
                         name: '芦泾港村社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -337,7 +309,7 @@ $(function () {
                         name: '永兴村社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -352,7 +324,7 @@ $(function () {
                         name: '东港社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -367,7 +339,7 @@ $(function () {
                         name: '曙光村社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -382,7 +354,7 @@ $(function () {
                         name: '越江社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -397,7 +369,7 @@ $(function () {
                         name: '节制闸村社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -412,7 +384,7 @@ $(function () {
                         name: '永兴花苑社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -427,7 +399,7 @@ $(function () {
                         name: '永和佳苑社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -442,7 +414,7 @@ $(function () {
                         name: '窑墩坝村社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -484,13 +456,14 @@ $(function () {
                         map: 'kfq',
                         show: true,
                         label: {
+                            color: '#fff',
                             emphasis: {
                                 show: false
                             }
                         },
                         itemStyle: {
                             normal: {
-                                areaColor: '#019CFB',
+                                areaColor: '#2a92fd',
                                 borderColor: '#A4FDFF',
                                 borderWidth: 1,
                                 shadowColor: '#A4FDFF',
@@ -519,7 +492,7 @@ $(function () {
                             roam: false,
                             itemStyle: {
                                 normal: {
-                                    areaColor: '019CFB',
+                                    areaColor: '2a92fd',
                                     borderColor: '#A4FDFF',
                                     borderWidth: 1
                                 },
@@ -545,7 +518,7 @@ $(function () {
                                     },
                                     position: 'bottom',
                                     textStyle: {
-                                        color: '#000',
+                                        color: '#fff',
                                         fontSize: fontSize,
                                     }
                                 }
@@ -566,7 +539,7 @@ $(function () {
                 myChart.on('click', function (params) {
                     for (var i = 0; i < kfqArray.length; i++) {
                         if (params.name == kfqArray[i]) {
-                            $.post("community_info", {name: params.name}, function (resp) {
+                            $.post("/api/community_info", {name: params.name}, function (resp) {
                                 if (resp.code == 0) {
                                     openToolTips(params.name, resp.data);
                                 } else {
@@ -577,7 +550,8 @@ $(function () {
                     }
                 });
 
-                $('#comeback').show();
+                $('#community').removeClass('layui-hide');
+                $('#community_btn').text("经济开发区")
             }
 
         });
@@ -586,7 +560,7 @@ $(function () {
     /**
      * 加载幸福街道地图
      */
-    var xfArray = ['转水社区', '花桥社区', '管园村', '施店社区', '幸福社区', '文俊社区', '蒋坝村', '幸福佳苑社区', '秦西村', '祖望社区'];
+    var xfArray = ['转水社区', '花桥社区', '管园村', '施店社区', '幸福社区', '文俊村社区', '蒋坝村', '幸福佳苑社区', '秦西村', '祖望社区'];
 
     function loadXFMap() {
         $.ajax({
@@ -602,7 +576,7 @@ $(function () {
                     '管园村': [120.84085464477539, 32.09799051942507],
                     '施店社区': [120.85561752319337, 32.098135940623976],
                     '幸福社区': [120.85647583007812, 32.09159175748344],
-                    '文俊社区': [120.84720611572266, 32.0879558976284],
+                    '文俊村社区': [120.84720611572266, 32.0879558976284],
                     '蒋坝村': [120.83227157592773, 32.0824291135784],
                     '幸福佳苑社区': [120.85853576660156, 32.083447230490506],
                     '秦西村': [120.85218429565428, 32.07341101159024],
@@ -614,7 +588,7 @@ $(function () {
                         name: '转水社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -629,7 +603,7 @@ $(function () {
                         name: '花桥社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -644,7 +618,7 @@ $(function () {
                         name: '管园村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -659,7 +633,7 @@ $(function () {
                         name: '施店社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -674,7 +648,7 @@ $(function () {
                         name: '幸福社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -686,10 +660,10 @@ $(function () {
                         }
                     },
                     {
-                        name: '文俊社区',
+                        name: '文俊村社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -704,7 +678,7 @@ $(function () {
                         name: '蒋坝村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -719,7 +693,7 @@ $(function () {
                         name: '幸福佳苑社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -734,7 +708,7 @@ $(function () {
                         name: '秦西村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -749,7 +723,7 @@ $(function () {
                         name: '祖望社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -797,7 +771,7 @@ $(function () {
                         },
                         itemStyle: {
                             normal: {
-                                areaColor: '#019CFB',
+                                areaColor: '#2a92fd',
                                 borderColor: '#A4FDFF',
                                 borderWidth: 1,
                                 // shadowColor: '#998262',
@@ -826,7 +800,7 @@ $(function () {
                             roam: false,
                             itemStyle: {
                                 normal: {
-                                    areaColor: '019CFB',
+                                    areaColor: '2a92fd',
                                     borderColor: '#A4FDFF',
                                     borderWidth: 1
                                 },
@@ -852,7 +826,7 @@ $(function () {
                                     },
                                     position: 'bottom',
                                     textStyle: {
-                                        color: '#000',
+                                        color: '#fff',
                                         fontSize: fontSize,
                                     }
                                 }
@@ -871,9 +845,10 @@ $(function () {
                 myChart.setOption(option, true);
                 myChart.off('click');
                 myChart.on('click', function (params) {
+                    console.log(params.name)
                     for (var i = 0; i < xfArray.length; i++) {
                         if (params.name == xfArray[i]) {
-                            $.post("community_info", {name: params.name}, function (resp) {
+                            $.post("/api/community_info", {name: params.name}, function (resp) {
                                 if (resp.code == 0) {
                                     openToolTips(params.name, resp.data);
                                 } else {
@@ -883,7 +858,8 @@ $(function () {
                         }
                     }
                 })
-                $('#comeback').show();
+                $('#community').removeClass('layui-hide');
+                $('#community_btn').text("幸福街道")
             }
 
         });
@@ -892,7 +868,7 @@ $(function () {
     /**
      * 加载陈桥街道地图
      */
-    var caArray = ['树北村', '天玺社区', '丽都社区', '天和社区', '五里树社区', '育爱村', '集成村', '仁和社区', '河口村'];
+    var caArray = ['树北村', '天玺社区', '丽都社区', '天和社区', '五里树社区', '育爱村', '集成村', '仁和社区', '河口村','丽康社区'];
 
     function loadCQMap() {
         $.ajax({
@@ -907,12 +883,12 @@ $(function () {
                     '树北村': [120.81579208374023, 32.12910537866883],
                     '天玺社区': [120.81888198852539, 32.116602550956046],
                     '丽都社区': [120.83707809448241, 32.10918727429358],
-                    '天和社区': [120.8163070678711,32.10838755161535],
+                    '天和社区': [120.8163070678711, 32.10838755161535],
                     '丽康社区': [120.82403182983397, 32.098717623104534],
                     '五里树社区': [120.80240249633789, 32.103807186796196],
                     '育爱村': [120.79072952270508, 32.11602098239759],
                     '集成村': [120.77545166015625, 32.09173718886837],
-                    '仁和社区': [120.80008506774902,32.092464342320646],
+                    '仁和社区': [120.80008506774902, 32.092464342320646],
                     '河口村': [120.79622268676756, 32.08519254738235]
 
                 }
@@ -921,7 +897,7 @@ $(function () {
                         name: '树北村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -936,7 +912,7 @@ $(function () {
                         name: '天玺社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -951,7 +927,7 @@ $(function () {
                         name: '丽都社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -966,7 +942,7 @@ $(function () {
                         name: '天和社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -981,7 +957,7 @@ $(function () {
                         name: '丽康社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -996,7 +972,7 @@ $(function () {
                         name: '五里树社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 0,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1011,8 +987,8 @@ $(function () {
                         name: '育爱村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
-                            borderWidth:1,
+                            areaColor: '#2a92fd',
+                            borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
                                 areaColor: '#005CD7',
@@ -1026,7 +1002,7 @@ $(function () {
                         name: '集成村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1041,7 +1017,7 @@ $(function () {
                         name: '仁和社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1056,7 +1032,7 @@ $(function () {
                         name: '河口村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1104,7 +1080,7 @@ $(function () {
                         },
                         itemStyle: {
                             normal: {
-                                areaColor: '#019CFB',
+                                areaColor: '#2a92fd',
                                 borderColor: '#A4FDFF',
                                 borderWidth: 1,
                                 // shadowColor: '#998262',
@@ -1133,7 +1109,7 @@ $(function () {
                             roam: false,
                             itemStyle: {
                                 normal: {
-                                    areaColor: '019CFB',
+                                    areaColor: '2a92fd',
                                     borderColor: '#A4FDFF',
                                     borderWidth: 1
                                 },
@@ -1159,7 +1135,7 @@ $(function () {
                                     },
                                     position: 'bottom',
                                     textStyle: {
-                                        color: '#000',
+                                        color: '#fff',
                                         fontSize: fontSize
                                     }
                                 }
@@ -1178,9 +1154,11 @@ $(function () {
                 myChart.setOption(option, true);
                 myChart.off('click');
                 myChart.on('click', function (params) {
+                    console.log(params.name);
                     for (var i = 0; i < caArray.length; i++) {
                         if (params.name == caArray[i]) {
-                            $.post("community_info", {name: params.name}, function (resp) {
+                            $.post("/api/community_info", {name: params.name}, function (resp) {
+                                console.log(resp);
                                 if (resp.code == 0) {
                                     openToolTips(params.name, resp.data);
                                 } else {
@@ -1190,7 +1168,8 @@ $(function () {
                         }
                     }
                 })
-                $('#comeback').show();
+                $('#community').removeClass('layui-hide');
+                $('#community_btn').text("陈桥街道")
             }
 
         });
@@ -1233,7 +1212,7 @@ $(function () {
                         name: '闸东社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1248,7 +1227,7 @@ $(function () {
                         name: '西洋桥社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1263,7 +1242,7 @@ $(function () {
                         name: '公园社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1278,7 +1257,7 @@ $(function () {
                         name: '碧林湾社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1293,7 +1272,7 @@ $(function () {
                         name: '新园社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1308,7 +1287,7 @@ $(function () {
                         name: '永泰社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1323,7 +1302,7 @@ $(function () {
                         name: '长岸社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1338,7 +1317,7 @@ $(function () {
                         name: '尖沟头社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1353,7 +1332,7 @@ $(function () {
                         name: '花墙社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1368,7 +1347,7 @@ $(function () {
                         name: '高店社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1383,7 +1362,7 @@ $(function () {
                         name: '横河社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1398,7 +1377,7 @@ $(function () {
                         name: '怡园社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1413,7 +1392,7 @@ $(function () {
                         name: '大南社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1428,7 +1407,7 @@ $(function () {
                         name: '新华社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1476,7 +1455,7 @@ $(function () {
                         },
                         itemStyle: {
                             normal: {
-                                areaColor: '#019CFB',
+                                areaColor: '#2a92fd',
                                 borderColor: '#A4FDFF',
                                 borderWidth: 1,
                                 // shadowColor: '#998262',
@@ -1505,7 +1484,7 @@ $(function () {
                             roam: false,
                             itemStyle: {
                                 normal: {
-                                    areaColor: '019CFB',
+                                    areaColor: '2a92fd',
                                     borderColor: '#A4FDFF',
                                     borderWidth: 1
                                 },
@@ -1531,7 +1510,7 @@ $(function () {
                                     },
                                     position: 'bottom',
                                     textStyle: {
-                                        color: '#000',
+                                        color: '#FFF',
                                         fontSize: fontSize,
                                     }
                                 }
@@ -1552,7 +1531,7 @@ $(function () {
                 myChart.on('click', function (params) {
                     for (var i = 0; i < tzArray.length; i++) {
                         if (params.name == tzArray[i]) {
-                            $.post("community_info", {name: params.name}, function (resp) {
+                            $.post("/api/community_info", {name: params.name}, function (resp) {
                                 if (resp.code == 0) {
                                     openToolTips(params.name, resp.data);
                                 } else {
@@ -1562,7 +1541,8 @@ $(function () {
                         }
                     }
                 })
-                $('#comeback').show();
+                $('#community').removeClass('layui-hide');
+                $('#community_btn').text("唐闸镇街道")
             }
 
         });
@@ -1599,7 +1579,7 @@ $(function () {
                         name: '袁桥村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1614,7 +1594,7 @@ $(function () {
                         name: '秦北村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1629,7 +1609,7 @@ $(function () {
                         name: '桥北村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1644,7 +1624,7 @@ $(function () {
                         name: '西安桥村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1659,7 +1639,7 @@ $(function () {
                         name: '费桥村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1674,7 +1654,7 @@ $(function () {
                         name: '桥东村',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1689,7 +1669,7 @@ $(function () {
                         name: '苏阳社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1704,7 +1684,7 @@ $(function () {
                         name: '秦灶社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1719,7 +1699,7 @@ $(function () {
                         name: '民安花苑社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1734,7 +1714,7 @@ $(function () {
                         name: '八里庙村社区',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1783,7 +1763,7 @@ $(function () {
                         },
                         itemStyle: {
                             normal: {
-                                areaColor: '#019CFB',
+                                areaColor: '#2a92fd',
                                 borderColor: '#A4FDFF',
                                 borderWidth: 1,
                                 // shadowColor: '#998262',
@@ -1812,7 +1792,7 @@ $(function () {
                             roam: false,
                             itemStyle: {
                                 normal: {
-                                    areaColor: '019CFB',
+                                    areaColor: '2a92fd',
                                     borderColor: '#fff',
                                     borderWidth: 1
                                 },
@@ -1838,7 +1818,7 @@ $(function () {
                                     },
                                     position: 'bottom',
                                     textStyle: {
-                                        color: '#000',
+                                        color: '#FFF',
                                         fontSize: fontSize,
                                     }
                                 }
@@ -1859,7 +1839,7 @@ $(function () {
                 myChart.on('click', function (params) {
                     for (var i = 0; i < qzArray.length; i++) {
                         if (params.name == qzArray[i]) {
-                            $.post("community_info", {name: params.name}, function (resp) {
+                            $.post("/api/community_info", {name: params.name}, function (resp) {
                                 if (resp.code == 0) {
                                     openToolTips(params.name, resp.data);
                                 } else {
@@ -1869,7 +1849,8 @@ $(function () {
                         }
                     }
                 })
-                $('#comeback').show();
+                $('#community').removeClass('layui-hide');
+                $('#community_btn').text("秦灶街道")
             }
 
         });
@@ -1915,14 +1896,14 @@ $(function () {
             success: function (data) {
                 echarts.registerMap('main', data);
                 var geoCoordMap = {
-                    '港闸区': [ 120.81836700439453,32.07530197765318],
+                    '港闸区': [120.81836700439453, 32.07530197765318],
                 }
                 var data = [
                     {
                         name: '港闸区',
                         value: 5,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -1969,7 +1950,7 @@ $(function () {
                         },
                         itemStyle: {
                             normal: {
-                                areaColor: '#019CFB',
+                                areaColor: '#2a92fd',
                                 borderColor: '#A4FDFF',
                                 borderWidth: 1,
                                 // shadowColor: '#998262',
@@ -1998,7 +1979,7 @@ $(function () {
                             roam: false,
                             itemStyle: {
                                 normal: {
-                                    areaColor: '019CFB',
+                                    areaColor: '2a92fd',
                                     borderColor: '#A4FDFF',
                                     borderWidth: 1
                                 },
@@ -2024,7 +2005,7 @@ $(function () {
                                     },
                                     position: 'bottom',
                                     textStyle: {
-                                        color: '#000',
+                                        color: '#FFF',
                                         fontSize: fontSize,
                                     }
                                 }
@@ -2044,6 +2025,7 @@ $(function () {
                 myChart.off('click');
                 myChart.on('click', function (params) {
                     loadGZQMap();
+                    $('#street').removeClass('layui-hide');
                 });
                 $('#comeback').hide();
             }
@@ -2072,7 +2054,7 @@ $(function () {
                         name: '陈桥街道',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -2087,7 +2069,7 @@ $(function () {
                         name: '经济开发区',
                         value: 22,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -2102,7 +2084,7 @@ $(function () {
                         name: '唐闸镇街道',
                         value: 14,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -2117,7 +2099,7 @@ $(function () {
                         name: '幸福街道',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -2132,7 +2114,7 @@ $(function () {
                         name: '秦灶街道',
                         value: 10,
                         itemStyle: {
-                            areaColor: '#019CFB',
+                            areaColor: '#2a92fd',
                             borderWidth: 1,
                             borderColor: '#A4FDFF',
                             emphasis: {
@@ -2179,7 +2161,7 @@ $(function () {
                         },
                         itemStyle: {
                             normal: {
-                                // areaColor: '#019CFB',
+                                // areaColor: '#2a92fd',
                                 // borderColor: '#A4FDFF',
                                 // borderWidth: 1,
                                 // shadowColor: '#998262',
@@ -2208,7 +2190,7 @@ $(function () {
                             roam: false,
                             itemStyle: {
                                 normal: {
-                                    areaColor: '019CFB',
+                                    areaColor: '2a92fd',
                                     borderColor: '#A4FDFF',
                                     borderWidth: 1
                                 },
@@ -2234,7 +2216,7 @@ $(function () {
                                     },
                                     position: 'bottom',
                                     textStyle: {
-                                        color: '#000',
+                                        color: '#fff',
                                         fontSize: fontSize,
                                     }
                                 }
@@ -2273,6 +2255,12 @@ $(function () {
     })
 
     $('#main_btn').click(function (e) {
+        $('#street').addClass('layui-hide');
+        $('#community').addClass('layui-hide');
         loadMainMap();
+    });
+    $('#street_btn').click(function (e) {
+        $('#community').addClass('layui-hide');
+        loadGZQMap();
     })
 })

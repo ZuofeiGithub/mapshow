@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>社区信息编辑</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <style>
+        body{
+            background: url("/images/background.png");
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .layui-form-label{
+            color: white;
+            font-size: 20px;
+        }
+        .form_content{
+            width: 80%;
+            height: 800px;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            margin-left: -40%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="layui-container">
+    <div class="form_content">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">社区名称</label>
+                <div class="layui-input-block">
+                    <select name="com_id">
+                        <option value="">请选择社区</option>
+                        <optgroup label="唐闸镇街道" id="tangzha">
+                        </optgroup>
+                        <optgroup label="经济开发区" id="kaifaqu">
+                        </optgroup>
+                        <optgroup label="秦灶街道" id="qinzao">
+                        </optgroup>
+                        <optgroup label="幸福街道" id="xinfu">
+                        </optgroup>
+                        <optgroup label="陈桥街道" id="chenqiao">
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">社区信息</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" class="layui-textarea" style="min-height: 600px" name="info"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit="" lay-filter="modify">立即提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="/layui/layui.js"></script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate
+            , $ = layui.$;
+
+        $.get('community_list', function (resp) {
+            if (resp.code == 0) {
+                if (resp.data.length > 0) {
+                    for (var i = 0; i < resp.data.length; i++) {
+                        if (resp.data[i].type == 1) {
+                            $('#tangzha').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
+                        }
+                        if (resp.data[i].type == 2) {
+                            $('#kaifaqu').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
+                        }
+                        if (resp.data[i].type == 3) {
+                            $('#qinzao').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
+                        }
+                        if (resp.data[i].type == 4) {
+                            $('#xinfu').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
+                        }
+                        if (resp.data[i].type == 5) {
+                            $('#chenqiao').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
+                        }
+                    }
+                    form.render('select');
+                }
+            }
+        });
+        form.on('submit(modify)', function(data){
+            var field = data.field;
+            $.post('modify_info',field,function (resp) {
+                if(resp.code == 0){
+                    layer.msg(resp.msg);
+                }else{
+                    layer.msg(resp.msg);
+                }
+            })
+            return false;
+        });
+    });
+</script>
+</html>
