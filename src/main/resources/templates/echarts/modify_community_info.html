@@ -34,7 +34,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">社区名称</label>
                 <div class="layui-input-block">
-                    <select name="com_id">
+                    <select name="com_id" lay-verify="com">
                         <option value="">请选择社区</option>
                         <optgroup label="唐闸镇街道" id="tangzha">
                         </optgroup>
@@ -52,7 +52,7 @@
             <div class="layui-form-item layui-form-text">
                 <label class="layui-form-label">社区信息</label>
                 <div class="layui-input-block">
-                    <textarea placeholder="请输入内容" class="layui-textarea" style="min-height: 600px" name="info"></textarea>
+                    <textarea placeholder="请输入内容" class="layui-textarea" style="min-height: 600px" name="info" lay-verify="content"></textarea>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -94,6 +94,18 @@
                         }
                     }
                     form.render('select');
+                }
+            }
+        });
+        form.verify({
+            com: function(value){
+                if(value == ''){
+                    return '请选择某个社区';
+                }
+            }
+            ,content: function(value){
+                if(value == ''){
+                    return '请输入内容'
                 }
             }
         });

@@ -747,7 +747,7 @@
         "stroke": "#555555",
         "stroke-width": 2,
         "stroke-opacity": 1,
-        "name": "蒋坝村"
+        "name": "蒋坝村社区"
       },
       "geometry": {
         "type": "Polygon",
@@ -963,7 +963,7 @@
         "stroke": "#555555",
         "stroke-width": 2,
         "stroke-opacity": 1,
-        "name": "幸福佳苑社区"
+        "name": "幸福家苑社区"
       },
       "geometry": {
         "type": "Polygon",
@@ -1187,7 +1187,7 @@
         "stroke": "#555555",
         "stroke-width": 2,
         "stroke-opacity": 1,
-        "name": "秦西村"
+        "name": "秦西社区"
       },
       "geometry": {
         "type": "Polygon",

@@ -40,7 +40,7 @@ public class MyInterceptor implements HandlerInterceptor {
               User user = (User) session.getAttribute("userinfo");
 
                 if (user == null) {
-                    response.sendRedirect("/login");
+                    //response.sendRedirect("/login");
                     return false;
                 } else {
                     return true;

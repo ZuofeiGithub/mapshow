@@ -58,9 +58,9 @@ body{
     }
     .nav{
         position: absolute;
-        right: 8%;
-        top: 15%;
-        width: 200px;
+        right: 5%;
+        top: 10%;
+        width: 100px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -88,8 +88,8 @@ body{
     }
     .nav{
         position: absolute;
-        right: 10%;
-        top: 20%;
+        right: 5%;
+        top: 10%;
         width: 200px;
         display: flex;
         flex-direction: column;
@@ -119,8 +119,8 @@ body{
 
     .nav{
         position: absolute;
-        right: 10%;
-        top: 20%;
+        right: 5%;
+        top: 10%;
         width: 200px;
         display: flex;
         flex-direction: column;

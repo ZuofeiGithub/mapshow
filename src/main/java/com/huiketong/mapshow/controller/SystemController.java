@@ -14,7 +14,7 @@ public class SystemController {
 
     @Autowired
     UserService userService;
-    @PostMapping(value = "add_user")
+    @PostMapping(value = "/api/add_user")
     @ResponseBody
     public BaseJsonResp addUser(String username,String password){
         BaseJsonResp resp = new BaseJsonResp();

@@ -17,12 +17,12 @@ import java.util.List;
 public class HomeController {
     @Autowired
     CommunityInfoSevice communityInfoSevice;
-    @GetMapping(value = "modifyinfo")
+    @GetMapping(value = "/modifyinfo")
     public String modifyInfo(){
-        return "/echarts/modify_community_info.html";
+        return "echarts/modify_community_info.html";
     }
 
-    @GetMapping(value = "community_list")
+    @GetMapping(value = "/community_list")
     @ResponseBody
     public BaseJsonResp communityList(){
         BaseJsonResp resp = new BaseJsonResp();
@@ -44,7 +44,7 @@ public class HomeController {
         return resp;
     }
 
-    @PostMapping(value = "modify_info")
+    @PostMapping(value = "/modify_info")
     @ResponseBody
     public BaseJsonResp modifyInfo(Integer com_id,String info){
         BaseJsonResp resp = new BaseJsonResp();
