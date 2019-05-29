@@ -51,4 +51,9 @@ public class MapController {
         }
         return resp;
     }
+
+    @GetMapping(value = "/map")
+    public String map(){
+        return "/echarts/redo_map.html";
+    }
 }

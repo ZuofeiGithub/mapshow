@@ -91,6 +91,7 @@ public class MyInterceptor implements HandlerInterceptor {
         notLoginPaths.add("/login");
         notLoginPaths.add("/gangzhamap");
         notLoginPaths.add("/tooltips");
+        notLoginPaths.add("/map");
         if (notLoginPaths.contains(path)) return false;
         return true;
     }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网格布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        /*PC*/
+        @media screen and (min-width:960px){
+            .container {
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-columns:3fr 6fr 1fr;
+                grid-template-rows: 1fr 9fr;
+                /*grid-column-gap: 10px;*/
+                /*grid-row-gap: 15px;*/
+                grid-template-areas: "header header header" "content main nav";
+            }
+            .item {
+                border: 1px solid red;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: lawngreen;
+            }
+            .item-a {
+                font-size: 30px;
+                color: black;
+                grid-area: header;
+            }
+            .item-b{
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="item item-a" style="background-color: aqua">
+        <div class="main_title"><p>港闸区党建创新“书记项目”地图后台系统</p></div>
+    </div>
+    <div class="item item-b" style="background-color: red">快达拉斯讲道理静安寺</div>
+    <div class="item" style="background-color: black">Three</div>
+    <div class="item" style="background-color:blue ">Four</div>
+</div>
+</body>
+</html>

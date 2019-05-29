@@ -2037,7 +2037,7 @@ $(function () {
      */
     function loadGZQMap() {
         $.ajax({
-            url: 'json/gangzha.json',
+            url: 'json/redo_gangzha.json',
             async: false,
             dataType: 'json',
             success: function (data) {
