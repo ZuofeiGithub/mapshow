@@ -52,7 +52,7 @@
             <div class="layui-form-item layui-form-text">
                 <label class="layui-form-label">社区信息</label>
                 <div class="layui-input-block">
-                    <textarea placeholder="请输入内容" class="layui-textarea" style="min-height: 600px" name="info" lay-verify="content"></textarea>
+                    <textarea placeholder="请输入内容" class="layui-textarea" style="min-height: 600px" name="info" lay-verify="content" id="content"></textarea>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -65,61 +65,101 @@
 </div>
 </body>
 <script src="/layui/layui.js"></script>
+<script src="kindeditor/kindeditor-all.js"></script>
+<script src="kindeditor/plugins/code/prettify.js"></script>
+<script src="kindeditor/lang/zh-CN.js"></script>
 <script>
-    layui.use(['form', 'layedit', 'laydate'], function () {
-        var form = layui.form
-            , layer = layui.layer
-            , layedit = layui.layedit
-            , laydate = layui.laydate
-            , $ = layui.$;
+    KindEditor.ready(function (K) {
+        window.editor = K.create('#content', {
+            items: ['source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
+                'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+                'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+                'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+                'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+                'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+                'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+                'anchor', 'link', 'unlink', '|', 'about'],
+            allowFileManager: true,
+            filePostName: 'file',//跟服务端参数对应
+            uploadJson: "/kindeditor/fileUpload",
+            fileManagerJson: "/kindeditor/fileManager",//指定浏览远程图片的服务器端程序
+            minHeight: 500,
+            afterCreate: function () {
+                var self = this;
+                K.ctrl(document, 13, function () {
+                    self.sync();
+                    document.forms['activity_form'].submit();
+                });
+                K.ctrl(self.edit.doc, 13, function () {
+                    self.sync();
+                    document.forms['activity_form'].submit();
+                });
+            },
+            afterUpload: function (url) {
 
-        $.get('community_list', function (resp) {
-            if (resp.code == 0) {
-                if (resp.data.length > 0) {
-                    for (var i = 0; i < resp.data.length; i++) {
-                        if (resp.data[i].type == 1) {
-                            $('#tangzha').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
+            }
+        });
+        layui.use(['form', 'layedit', 'laydate'], function () {
+            var form = layui.form
+                , layer = layui.layer
+                , layedit = layui.layedit
+                , laydate = layui.laydate
+                , $ = layui.$;
+            editor.sync();
+            $.get('community_list', function (resp) {
+                if (resp.code == 0) {
+                    if (resp.data.length > 0) {
+                        for (var i = 0; i < resp.data.length; i++) {
+                            if (resp.data[i].type == 1) {
+                                $('#tangzha').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
+                            }
+                            if (resp.data[i].type == 2) {
+                                $('#kaifaqu').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
+                            }
+                            if (resp.data[i].type == 3) {
+                                $('#qinzao').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
+                            }
+                            if (resp.data[i].type == 4) {
+                                $('#xinfu').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
+                            }
+                            if (resp.data[i].type == 5) {
+                                $('#chenqiao').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
+                            }
                         }
-                        if (resp.data[i].type == 2) {
-                            $('#kaifaqu').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
-                        }
-                        if (resp.data[i].type == 3) {
-                            $('#qinzao').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
-                        }
-                        if (resp.data[i].type == 4) {
-                            $('#xinfu').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
-                        }
-                        if (resp.data[i].type == 5) {
-                            $('#chenqiao').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
-                        }
+                        form.render('select');
                     }
-                    form.render('select');
                 }
-            }
-        });
-        form.verify({
-            com: function(value){
-                if(value == ''){
-                    return '请选择某个社区';
+            });
+            form.verify({
+                com: function(value){
+                    if(value == ''){
+                        return '请选择某个社区';
+                    }
                 }
-            }
-            ,content: function(value){
-                if(value == ''){
-                    return '请输入内容'
+                ,content: function(value){
+                   value = editor.html();
+                    if(value == ''){
+                        return '请输入内容'
+                    }
                 }
-            }
-        });
-        form.on('submit(modify)', function(data){
-            var field = data.field;
-            $.post('modify_info',field,function (resp) {
-                if(resp.code == 0){
-                    layer.msg(resp.msg);
-                }else{
-                    layer.msg(resp.msg);
-                }
-            })
-            return false;
+            });
+            form.on('submit(modify)', function(data){
+                var field = data.field;
+                field.info = editor.html();
+                console.log(field);
+                $.post('modify_info',field,function (resp) {
+                    if(resp.code == 0){
+                        layer.msg(resp.msg);
+                    }else{
+                        layer.msg(resp.msg);
+                    }
+                })
+                return false;
+            });
         });
     });
+
+
+
 </script>
 </html>
