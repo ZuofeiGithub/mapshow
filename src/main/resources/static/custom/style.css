@@ -16,6 +16,7 @@ html, body {
 }
 body{
     -webkit-text-size-adjust: 100% !important;
+    background: url("/images/background.png") no-repeat center center;
 }
 #backImg{
     width: 100%;
@@ -50,17 +51,78 @@ body{
 
 
 
-/*手机*/
-@media screen and (max-width: 600px) {
+/*!*手机*!*/
+/*@media screen and (max-width: 600px) {*/
+    /*#main {*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+    /*}*/
+    /*.nav{*/
+        /*position: absolute;*/
+        /*right: 5%;*/
+        /*top: 10%;*/
+        /*width: 100px;*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*justify-content: center;*/
+        /*align-items: center;*/
+        /*z-index: 9999;*/
+    /*}*/
+    /*.nav li a{*/
+        /*color: white;*/
+        /*cursor: pointer;*/
+    /*}*/
+    /*.nav li a:hover{*/
+        /*color: red;*/
+    /*}*/
+    /*.nav li{*/
+        /*color:white;*/
+        /*font-size: 1.5vw;*/
+    /*}*/
+/*}*/
+
+/*!*平板*!*/
+/*@media screen and (min-width: 600px) and (max-width: 960px) {*/
+    /*#main {*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+    /*}*/
+    /*.nav{*/
+        /*position: absolute;*/
+        /*right: 5%;*/
+        /*top: 10%;*/
+        /*width: 300px;*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*justify-content: center;*/
+        /*align-items: center;*/
+        /*z-index: 9999;*/
+    /*}*/
+    /*.nav li a{*/
+        /*color: white;*/
+        /*cursor: pointer;*/
+    /*}*/
+    /*.nav li a:hover{*/
+        /*color: red;*/
+    /*}*/
+    /*.nav li{*/
+        /*color:white;*/
+        /*font-size: 1.5vw;*/
+    /*}*/
+/*}*/
+
+/*!*PC*!*/
+/*@media screen and (min-width: 960px) {*/
     #main {
         width: 100%;
         height: 100%;
     }
+
     .nav{
         position: absolute;
         right: 5%;
         top: 10%;
-        width: 100px;
+        width: 300px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -78,65 +140,4 @@ body{
         color:white;
         font-size: 1.5vw;
     }
-}
-
-/*平板*/
-@media screen and (min-width: 600px) and (max-width: 960px) {
-    #main {
-        width: 100%;
-        height: 100%;
-    }
-    .nav{
-        position: absolute;
-        right: 5%;
-        top: 10%;
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-    }
-    .nav li a{
-        color: white;
-        cursor: pointer;
-    }
-    .nav li a:hover{
-        color: red;
-    }
-    .nav li{
-        color:white;
-        font-size: 1.5vw;
-    }
-}
-
-/*PC*/
-@media screen and (min-width: 960px) {
-    #main {
-        width: 100%;
-        height: 100%;
-    }
-
-    .nav{
-        position: absolute;
-        right: 5%;
-        top: 10%;
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-    }
-    .nav li a{
-        color: white;
-        cursor: pointer;
-    }
-    .nav li a:hover{
-        color: red;
-    }
-    .nav li{
-        color:white;
-        font-size: 1.5vw;
-    }
-}
+/*}*/

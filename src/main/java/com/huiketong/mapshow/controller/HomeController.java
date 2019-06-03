@@ -4,6 +4,7 @@ import com.huiketong.mapshow.data.CommunityData;
 import com.huiketong.mapshow.entity.BaseJsonResp;
 import com.huiketong.mapshow.entity.CommunityInfo;
 import com.huiketong.mapshow.sevice.CommunityInfoSevice;
+import com.huiketong.mapshow.utils.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,6 +54,19 @@ public class HomeController {
             resp.setMsg("修改成功").setCode(0);
         }catch (Exception e){
             resp.setMsg("修改失败").setCode(1);
+        }
+        return resp;
+    }
+
+    @PostMapping(value = "/info")
+    @ResponseBody
+    public BaseJsonResp info(Integer com_id){
+        BaseJsonResp resp = new BaseJsonResp();
+        CommunityInfo communityInfo = communityInfoSevice.findContentById(com_id);
+        if(ObjectUtils.isNotEmpty(communityInfo)){
+            resp.setMsg("获取信息成功").setCode(0).setData(communityInfo.getContent());
+        }else {
+            resp.setData(null).setCode(1).setMsg("没有信息");
         }
         return resp;
     }

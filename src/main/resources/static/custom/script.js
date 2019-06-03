@@ -46,11 +46,12 @@ $(function () {
             shade: 0.8,
             shadeClose: 0.5,
             type: 2,
-            content: 'tooltips'
+            content: 'tooltips',
+            scrollbar: false
             , success: function (layero, i) {
                 var body = layer.getChildFrame('body', i);
-                body.find('#title p').html(title);
-                body.find('#content p').html(content);
+                //body.find('#title p').html(title);
+                body.find('#detail').empty().append(content);
             }
         });
 
@@ -552,7 +553,7 @@ $(function () {
                 });
 
                 $('#community').removeClass('layui-hide');
-                $('#community_btn').text("经济开发区")
+                $('#community_btn').text("港闸经济开发区")
                 var introduction = "江苏省南通港闸经济开发区是1993年江苏省人民政府批准成立的省级开发区，经过几次区划调整，现有的开发区是由原来的永兴综合开发区、永兴乡、闸西乡、芦泾乡、天生港街道等五个乡镇街道合并而成，东至通吕运河，南至长江，西至九圩港，北至通扬运河，总面积40平方公里，户籍人口近10万人，下辖7个行政村、7个农村社区和8个城镇社区居委会。开发区党工委、管委会均为副处级建制，下设永兴、天生港镇街道，共有19个部门。其中正科级机构5个，副科级机构14个。";
                 $('#introduction').empty().append(introduction);
             }
@@ -848,7 +849,6 @@ $(function () {
                 myChart.setOption(option, true);
                 myChart.off('click');
                 myChart.on('click', function (params) {
-                    console.log(params.name)
                     for (var i = 0; i < xfArray.length; i++) {
                         if (params.name == xfArray[i]) {
                             $.post("/api/community_info", {name: params.name}, function (resp) {
@@ -1562,7 +1562,7 @@ $(function () {
 
     function loadQZMap() {
         $.ajax({
-            url: 'json/qz.json',
+            url: 'json/redo_qinzao.json',
             async: false,
             dataType: 'json',
             success: function (data) {
@@ -1570,16 +1570,16 @@ $(function () {
 
                 //地图上插的小旗子
                 var geoCoordMap = {
-                    '袁桥村': [120.89003562927246, 32.07777472041461],
-                    '秦北村': [120.875186920166, 32.0732655510424],
-                    '桥北社区': [120.8685779571533, 32.064319282619806],
-                    '西安桥村': [120.90831756591797, 32.07501106234297],
-                    '费桥村': [120.89492797851561, 32.0661377007248],
-                    '桥东村社区': [120.88231086730957, 32.0618461759786],
-                    '苏阳社区': [120.8726119995117, 32.05660878824919],
-                    '秦灶社区': [120.89518547058105, 32.056754275290444],
-                    '民安花苑社区': [120.87613105773926, 32.04918864238804],
-                    '八里庙村社区': [120.8920955657959, 32.048897644015334],
+                    '袁桥村': [ 120.89278221130371,32.07733835890496],
+                    '秦北村': [120.87183952331542,32.071156347093535],
+                    '桥北社区': [120.87492942810059,32.05500841552659],
+                    '西安桥村': [120.90514183044434,32.07748381297294],
+                    '费桥村': [120.88316917419432,32.07341101159024],
+                    '桥东村社区': [ 120.88574409484862, 32.056463300976624],
+                    // '苏阳社区': [120.8726119995117, 32.05660878824919],
+                    '秦灶社区': [  120.86480140686034,32.05617232573739],
+                    // '民安花苑社区': [120.87613105773926, 32.04918864238804],
+                    '八里庙村社区': [120.89655876159668,32.05486292570917],
                 }
                 var data = [
                     {
@@ -1867,7 +1867,7 @@ $(function () {
     }
 
 
-    var gzqArray = ['陈桥街道', '经济开发区', '唐闸镇街道', '幸福街道', '秦灶街道'];
+    var gzqArray = ['陈桥街道', '港闸经济开发区', '唐闸镇街道', '幸福街道', '秦灶街道'];
 
     /**
      * 根据下标加载对应的街道
@@ -2057,7 +2057,7 @@ $(function () {
                 echarts.registerMap('gzq', data);
                 var geoCoordMap = {
                     '陈桥街道': [120.80772399902344, 32.10700619594571],
-                    '经济开发区': [120.78128814697264, 32.04358676118635],
+                    '港闸经济开发区': [120.78128814697264, 32.04358676118635],
                     '唐闸镇街道': [120.82386016845702, 32.061627957476404],
                     '幸福街道': [120.85235595703126, 32.08751958472376],
                     '秦灶街道': [120.88874816894531, 32.06511939104014],
@@ -2079,7 +2079,7 @@ $(function () {
                         }
                     },
                     {
-                        name: '经济开发区',
+                        name: '港闸经济开发区',
                         value: 22,
                         itemStyle: {
                             areaColor: '#2a92fd',
@@ -2159,7 +2159,7 @@ $(function () {
                             if (typeof (e.value)[2] == "undefined") {
                                 return e.name;
                             } else {
-                                return '<p style="font-size: 15px;color: red;font-weight: bold">社区数</p>' + e.name + ':' + e.value[2] + '所';
+                                return '<p style="font-size: 15px;color: red;font-weight: bold"></p>' + e.name + '下辖' + e.value[2] + '家(村)社';
                             }
 
                         }

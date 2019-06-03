@@ -33,13 +33,14 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Controller
-@RequestMapping("kindeditor")
+@RequestMapping("/kindeditor")
 public class KindEditorController {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     @RequestMapping(value = "/fileUpload", method = RequestMethod.POST)
     @ResponseBody
+    @CrossOrigin
     public Map<String, Object> fileUpload(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException,
             FileUploadException {
         ServletContext application = request.getSession().getServletContext();
@@ -58,7 +59,7 @@ public class KindEditorController {
         extMap.put("file", "doc,docx,xls,xlsx,ppt,htm,html,txt,zip,rar,gz,bz2");
 
         // 最大文件大小
-        long maxSize = 1000000;
+        long maxSize = 1024*1024*1024;
 
         response.setContentType("text/html; charset=UTF-8");
 

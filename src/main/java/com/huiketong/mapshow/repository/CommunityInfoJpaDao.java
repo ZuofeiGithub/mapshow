@@ -20,4 +20,6 @@ public interface CommunityInfoJpaDao extends JpaRepository<CommunityInfo,Integer
     @Modifying
     @Transactional
     void updateComInfo(Integer id,String content);
+
+    CommunityInfo findCommunityInfoById(Integer id);
 }

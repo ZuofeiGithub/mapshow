@@ -11,4 +11,6 @@ public interface CommunityInfoSevice {
    List<CommunityInfo> findAll();
 
    void updateComInfo(Integer id,String content);
+
+   CommunityInfo findContentById(Integer id);
 }

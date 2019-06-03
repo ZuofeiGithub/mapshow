@@ -26,4 +26,9 @@ public class CommunityInfoSeviceImpl implements CommunityInfoSevice {
     public void updateComInfo(Integer id, String content) {
             communityInfoJpaDao.updateComInfo(id,content);
     }
+
+    @Override
+    public CommunityInfo findContentById(Integer id) {
+        return communityInfoJpaDao.findCommunityInfoById(id);
+    }
 }

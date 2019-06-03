@@ -18,7 +18,7 @@ public class MapController {
     @Autowired
     CommunityInfoSevice communityInfoSevice;
 
-    @GetMapping(value = "gangzhamap")
+    @GetMapping(value = "map")
     public String gangzhaqu(){
         return URL.GANGZHADISTRICTSTREETS;
     }
@@ -52,8 +52,8 @@ public class MapController {
         return resp;
     }
 
-    @GetMapping(value = "/map")
+    @GetMapping(value = "/gangzhamap")
     public String map(){
-        return "/echarts/redo_map.html";
+        return "echarts/redo_map.html";
     }
 }

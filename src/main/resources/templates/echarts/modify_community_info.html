@@ -34,7 +34,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">社区名称</label>
                 <div class="layui-input-block">
-                    <select name="com_id" lay-verify="com">
+                    <select name="com_id" lay-verify="com" lay-filter="com">
                         <option value="">请选择社区</option>
                         <optgroup label="唐闸镇街道" id="tangzha">
                         </optgroup>
@@ -81,8 +81,8 @@
                 'anchor', 'link', 'unlink', '|', 'about'],
             allowFileManager: true,
             filePostName: 'file',//跟服务端参数对应
-            uploadJson: "/kindeditor/fileUpload",
-            fileManagerJson: "/kindeditor/fileManager",//指定浏览远程图片的服务器端程序
+            uploadJson: "kindeditor/fileUpload",
+            fileManagerJson: " /fileManager",//指定浏览远程图片的服务器端程序
             minHeight: 500,
             afterCreate: function () {
                 var self = this;
@@ -146,7 +146,6 @@
             form.on('submit(modify)', function(data){
                 var field = data.field;
                 field.info = editor.html();
-                console.log(field);
                 $.post('modify_info',field,function (resp) {
                     if(resp.code == 0){
                         layer.msg(resp.msg);
@@ -156,6 +155,14 @@
                 })
                 return false;
             });
+
+            form.on('select(com)',function (data) {
+                $.post('info',{com_id:data.value},function (resp) {
+                    if(resp.code == 0){
+                        editor.html(resp.data);
+                    }
+                })
+            })
         });
     });
 
