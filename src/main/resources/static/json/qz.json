@@ -992,10 +992,12 @@
     {
       "type": "Feature",
       "properties": {
+        "fill": "#555555",
+        "fill-opacity": 0.5,
         "stroke": "#555555",
         "stroke-width": 2,
         "stroke-opacity": 1,
-        "name": "桥东村社区"
+        "name": "桥北社区"
       },
       "geometry": {
         "type": "Polygon",
