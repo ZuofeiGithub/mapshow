@@ -31,7 +31,7 @@ $(function () {
     if (isPhone) {
         mWidth = 90;
         mHeight = 83;
-        fontSize = e / 1980 * 10
+        fontSize = e / 1980 * 25
     } else {
         mWidth = 68;
         mHeight = 88;
