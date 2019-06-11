@@ -56,4 +56,10 @@ public class MapController {
     public String map(){
         return "echarts/redo_map.html";
     }
+
+
+    @GetMapping(value = "/layuimap")
+    public String layuimap(){
+        return "echarts/layui_map.html";
+    }
 }
