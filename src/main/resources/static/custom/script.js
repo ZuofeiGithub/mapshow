@@ -6,6 +6,7 @@ $(function () {
     var e = window.screen.availWidth;
     var fontSize;
     var shadowBlur = 1;
+    var zoomValue = 1.2;
     var emphasisshadowBlur = 20;
 
     function browserRedirect() {
@@ -35,7 +36,7 @@ $(function () {
     } else {
         mWidth = 68;
         mHeight = 88;
-        fontSize = e / 1980 * 16
+        fontSize = e / 2000 * 16
     }
 
     function openToolTips(title, content) {
@@ -474,7 +475,7 @@ $(function () {
                                 // shadowOffsetX: 20
                             }
                         },
-                        zoom: 1,
+                        zoom: zoomValue,
                     },
                     series: [
                         {
@@ -482,7 +483,7 @@ $(function () {
                             map: 'kfq',
                             geoIndex: 1,
                             aspectScale: 0.75, //长宽比
-                            zoom: 1,
+                            zoom: zoomValue,
                             label: {
                                 emphasis: {
                                     show: false,
@@ -784,7 +785,7 @@ $(function () {
                                 // shadowOffsetX: 20
                             }
                         },
-                        zoom: 1,
+                        zoom: zoomValue,
                     },
                     series: [
                         {
@@ -792,7 +793,7 @@ $(function () {
                             map: 'xf',
                             geoIndex: 1,
                             aspectScale: 0.75, //长宽比
-                            zoom: 1,
+                            zoom: zoomValue,
                             label: {
                                 emphasis: {
                                     show: false,
@@ -1094,7 +1095,7 @@ $(function () {
                                 // shadowOffsetX: 20
                             }
                         },
-                        zoom: 1,
+                        zoom: zoomValue,
                     },
                     series: [
                         {
@@ -1102,7 +1103,7 @@ $(function () {
                             map: 'cq',
                             geoIndex: 1,
                             aspectScale: 0.75, //长宽比
-                            zoom: 1,
+                            zoom: zoomValue,
                             label: {
                                 emphasis: {
                                     show: false,
@@ -1469,7 +1470,7 @@ $(function () {
                                 // shadowOffsetX: 20
                             }
                         },
-                        zoom: 1,
+                        zoom: zoomValue,
                     },
                     series: [
                         {
@@ -1477,7 +1478,7 @@ $(function () {
                             map: 'tz',
                             geoIndex: 1,
                             aspectScale: 0.75, //长宽比
-                            zoom: 1,
+                            zoom: zoomValue,
                             label: {
                                 emphasis: {
                                     show: false,
@@ -1786,7 +1787,7 @@ $(function () {
                                 // shadowOffsetX: 20
                             }
                         },
-                        zoom: 1,
+                        zoom: zoomValue,
                     },
                     series: [
                         {
@@ -1794,7 +1795,7 @@ $(function () {
                             map: 'qz',
                             geoIndex: 1,
                             aspectScale: 0.75, //长宽比
-                            zoom: 1,
+                            zoom: zoomValue,
                             label: {
                                 emphasis: {
                                     show: false,
@@ -1976,7 +1977,7 @@ $(function () {
                                 // shadowOffsetX: 20
                             }
                         },
-                        zoom: 1.0,
+                        zoom: zoomValue,
                     },
                     series: [
                         {
@@ -1984,7 +1985,7 @@ $(function () {
                             map: 'main',
                             geoIndex: 1,
                             aspectScale: 0.75, //长宽比
-                            zoom: 1,
+                            zoom: zoomValue,
                             label: {
                                 emphasis: {
                                     show: false,
@@ -2190,7 +2191,7 @@ $(function () {
                                 // shadowOffsetX: 20
                             }
                         },
-                        zoom: 1,
+                        zoom: zoomValue,
                     },
                     series: [
                         {
@@ -2198,7 +2199,7 @@ $(function () {
                             map: 'gzq',
                             geoIndex: 1,
                             aspectScale: 0.75, //长宽比
-                            zoom: 1,
+                            zoom: zoomValue,
                             label: {
                                 emphasis: {
                                     show: false,
