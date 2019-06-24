@@ -32,11 +32,11 @@ $(function () {
     if (isPhone) {
         mWidth = 90;
         mHeight = 83;
-        fontSize = e / 1980 * 20
+        fontSize = e / 1980 * 12
     } else {
         mWidth = 68;
         mHeight = 88;
-        fontSize = e / 2000 * 13
+        fontSize = e / 1980 * 12
     }
 
     function openToolTips(title, content) {
