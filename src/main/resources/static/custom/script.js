@@ -32,11 +32,11 @@ $(function () {
     if (isPhone) {
         mWidth = 90;
         mHeight = 83;
-        fontSize = e / 1980 * 25
+        fontSize = e / 1980 * 20
     } else {
         mWidth = 68;
         mHeight = 88;
-        fontSize = e / 2000 * 16
+        fontSize = e / 2000 * 13
     }
 
     function openToolTips(title, content) {
@@ -1160,11 +1160,11 @@ $(function () {
                 myChart.setOption(option, true);
                 myChart.off('click');
                 myChart.on('click', function (params) {
-                    console.log(params.name);
+                    //console.log(params.name);
                     for (var i = 0; i < caArray.length; i++) {
                         if (params.name == caArray[i]) {
                             $.post("/api/community_info", {name: params.name}, function (resp) {
-                                console.log(resp);
+                                //console.log(resp);
                                 if (resp.code == 0) {
                                     openToolTips(params.name, resp.data);
                                 } else {
@@ -2047,8 +2047,20 @@ $(function () {
                 myChart.setOption(option, true);
                 myChart.off('click');
                 myChart.on('click', function (params) {
-                    loadGZQMap();
-                    $('#street').removeClass('layui-hide');
+                    //console.log(params);
+                    if(params.componentSubType === 'map'){
+                        loadGZQMap();
+                        $('#street').removeClass('layui-hide');
+                    }else if(params.componentSubType === 'scatter'){
+                        $.post("/api/community_info", {name: params.name}, function (resp) {
+                            if (resp.code == 0) {
+                                openToolTips(params.name, resp.data);
+                            } else {
+                                openToolTips(params.name, resp.msg);
+                            }
+                        })
+                    }
+
                 });
                 var introduction = "港闸区，江苏省南通市的市辖区，飞速发展的城市副中心；位于长江入海口北岸，南通市区中部；西部以九圩港河为界，与通州区平潮镇隔河相望；" +
                     "北部与通州区刘桥镇、东部与通州区兴仁镇接壤；南部跨通吕运河可直达崇川区。下辖一个省级经济开发区、一个省级高新区和四个街道。总面积134.23平方公里，常住人口28.98万人，其中户籍人口19.77万人。" +
@@ -2261,10 +2273,19 @@ $(function () {
                 myChart.setOption(option, true);
                 myChart.off('click');
                 myChart.on('click', function (params) {
+                    //console.log(params);
                     //加载对应的街道
                     for (var i = 0; i < gzqArray.length; i++) {
-                        if (params.name === gzqArray[i]) {
+                        if (params.name === gzqArray[i]&&params.componentSubType === 'map') {
                             loadStreet(i);
+                        }else if(params.name === gzqArray[i]&&params.componentSubType === 'scatter'){
+                            $.post("/api/community_info", {name: params.name}, function (resp) {
+                                if (resp.code == 0) {
+                                    openToolTips(params.name, resp.data);
+                                } else {
+                                    openToolTips(params.name, resp.msg);
+                                }
+                            })
                         }
                     }
                 });

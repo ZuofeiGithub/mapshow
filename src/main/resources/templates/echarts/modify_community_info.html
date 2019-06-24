@@ -32,10 +32,11 @@
     <div class="form_content">
         <form class="layui-form">
             <div class="layui-form-item">
-                <label class="layui-form-label">社区名称</label>
+                <label class="layui-form-label">书记项目</label>
                 <div class="layui-input-block">
                     <select name="com_id" lay-verify="com" lay-filter="com">
-                        <option value="">请选择社区</option>
+                        <option value="">请选择地区</option>
+                        <optgroup label="区/街道项目" id="street"></optgroup>
                         <optgroup label="唐闸镇街道" id="tangzha">
                         </optgroup>
                         <optgroup label="经济开发区" id="kaifaqu">
@@ -124,6 +125,9 @@
                             }
                             if (resp.data[i].type == 5) {
                                 $('#chenqiao').append('<option value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
+                            }
+                            if(resp.data[i].type == 6) {
+                                $('#street').append('<option  value="' + resp.data[i].id + '">' + resp.data[i].name + '</option>');
                             }
                         }
                         form.render('select');
