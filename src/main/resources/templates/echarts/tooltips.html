@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>社区信息</title>
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+          content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/layui/css/layui.css">
     <link rel="stylesheet" href="/custom/tooltips.css">
 </head>
 <body>
@@ -13,6 +14,20 @@
         <div id="detail"></div>
     </div>
 </div>
+<script src="/layui/layui.js"></script>
+<script>
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+            ,$ = layui.$;
 
+        $('img').click(function () {
+            layer.photos({
+                photos: '#detail'
+                ,anim: 0 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+            });
+        })
+
+    });
+</script>
 </body>
 </html>
