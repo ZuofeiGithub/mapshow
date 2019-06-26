@@ -32,11 +32,13 @@ $(function () {
     if (isPhone) {
         mWidth = 90;
         mHeight = 83;
-        fontSize = e / 1980 * 12
+        fontSize = e / 1980 * 25
+        symbolSize = [12,12];
     } else {
         mWidth = 68;
         mHeight = 88;
         fontSize = e / 1980 * 12
+        symbolSize = [20,20]
     }
 
     function openToolTips(title, content) {
@@ -512,7 +514,7 @@ $(function () {
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
-                            symbolSize: [20, 20],
+                            symbolSize: symbolSize,
                             label: {
                                 normal: {
                                     show: true,
@@ -822,7 +824,7 @@ $(function () {
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
-                            symbolSize: [20, 20],
+                            symbolSize: symbolSize,
                             label: {
                                 normal: {
                                     show: true,
@@ -1132,7 +1134,7 @@ $(function () {
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
-                            symbolSize: [20, 20],
+                            symbolSize: symbolSize,
                             label: {
                                 normal: {
                                     show: true,
@@ -1507,7 +1509,7 @@ $(function () {
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
-                            symbolSize: [20, 20],
+                            symbolSize: symbolSize,
                             label: {
                                 normal: {
                                     show: true,
@@ -1829,7 +1831,7 @@ $(function () {
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
-                            symbolSize: [20, 20],
+                            symbolSize: symbolSize,
                             label: {
                                 normal: {
                                     show: true,
@@ -2019,7 +2021,7 @@ $(function () {
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
-                            symbolSize: [20, 20],
+                            symbolSize: symbolSize,
                             label: {
                                 normal: {
                                     show: true,
@@ -2245,7 +2247,7 @@ $(function () {
                             type: 'scatter',
                             coordinateSystem: 'geo',
                             symbol: 'image://images/flag.png',
-                            symbolSize: [20, 20],
+                            symbolSize: symbolSize,
                             label: {
                                 normal: {
                                     show: true,
