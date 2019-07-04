@@ -17,10 +17,10 @@ $(function () {
         var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
         var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
         var bIsAndroid = sUserAgent.match(/android/i) == "android";
-        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-
-        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+        //var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        //var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+        //|| bIsCE || bIsWM
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid ) {
             return true;
         } else {
             return false;
@@ -32,7 +32,7 @@ $(function () {
     if (isPhone) {
         mWidth = 90;
         mHeight = 83;
-        fontSize = e / 1980 * 25
+        fontSize = e / 1980 * 12
         symbolSize = [12,12];
     } else {
         mWidth = 68;

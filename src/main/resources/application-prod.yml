@@ -17,3 +17,6 @@ spring:
     url: jdbc:mysql://127.0.0.1:6612/gangzhaqu?useSSL=false&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
     username: gangzhaqu
     password: 4w7NeiN2CENH5DX2
+
+guangjiatong:
+  filePath: E:/download

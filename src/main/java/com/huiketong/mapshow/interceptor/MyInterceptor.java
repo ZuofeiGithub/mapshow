@@ -93,6 +93,7 @@ public class MyInterceptor implements HandlerInterceptor {
         notLoginPaths.add("/tooltips");
         notLoginPaths.add("/map");
         notLoginPaths.add("/layuimap");
+        notLoginPaths.add("/download");
         if (notLoginPaths.contains(path)) return false;
         return true;
     }
