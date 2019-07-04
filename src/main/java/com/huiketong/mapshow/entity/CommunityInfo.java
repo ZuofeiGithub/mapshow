@@ -13,6 +13,8 @@ public class CommunityInfo {
     Integer comType;
     @Column(columnDefinition = "text COMMENT '社区信息介绍'")
     String content;
+    @Column(columnDefinition = "int(1) default 1 COMMENT '是否显示社区信息'")
+    Integer isshow;
     public Integer getId() {
         return id;
     }
@@ -43,5 +45,13 @@ public class CommunityInfo {
 
     public void setComType(Integer comType) {
         this.comType = comType;
+    }
+
+    public Integer getIsshow() {
+        return isshow;
+    }
+
+    public void setIsshow(Integer isshow) {
+        this.isshow = isshow;
     }
 }

@@ -1,6 +1,7 @@
 package com.huiketong.mapshow.controller;
 
 import com.huiketong.mapshow.constant.URL;
+import com.huiketong.mapshow.data.CommunityInfoData;
 import com.huiketong.mapshow.entity.BaseJsonResp;
 import com.huiketong.mapshow.entity.CommunityInfo;
 import com.huiketong.mapshow.sevice.CommunityInfoSevice;
@@ -45,7 +46,10 @@ public class MapController {
         BaseJsonResp resp = new BaseJsonResp();
         CommunityInfo communityInfo = communityInfoSevice.findContentByName(name);
         if(!ObjectUtils.isEmpty(communityInfo)){
-            resp.setCode(0).setMsg("获取该社区内容成功").setData(communityInfo.getContent());
+            CommunityInfoData data = new CommunityInfoData();
+            data.setContext(communityInfo.getContent());
+            data.setIsshow(communityInfo.getIsshow());
+            resp.setCode(0).setMsg("获取该社区内容成功").setData(data);
         }else{
             resp.setCode(200).setMsg("该社区没有设置内容").setData("");
         }

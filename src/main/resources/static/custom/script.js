@@ -104,7 +104,7 @@ $(function () {
                     '隆兴佳园社区': [120.78669548034668, 32.043004727893994],
                     '芦泾港村社区': [120.79313278198244, 32.03369169193891],
                     '永兴村社区': [120.81064224243164, 32.03092670203405],
-                    '东港村社区': [120.79708099365236,32.023431704340496],
+                    '东港村社区': [ 120.79656600952148,32.02605138490175],
                     '曙光村社区': [120.80841064453125, 32.021321351629176],
                     '越江社区': [120.81562042236328, 32.025978617008874],
                     '节制闸村社区': [ 120.82197189331053,32.032673021160385],
@@ -558,11 +558,12 @@ $(function () {
                     for (var i = 0; i < kfqArray.length; i++) {
                         if (params.name == kfqArray[i]) {
                             $.post("/api/community_info", {name: params.name}, function (resp) {
-                                if (resp.code == 0) {
-                                    openToolTips(params.name, resp.data);
-                                } else {
-                                    openToolTips(params.name, resp.msg);
+                                if (resp.code == 0&&resp.data.isshow == 1) {
+                                    openToolTips(params.name, resp.data.context);
                                 }
+                                // else {
+                                //     openToolTips(params.name, resp.msg);
+                                // }
                             })
                         }
                     }
@@ -868,11 +869,12 @@ $(function () {
                     for (var i = 0; i < xfArray.length; i++) {
                         if (params.name == xfArray[i]) {
                             $.post("/api/community_info", {name: params.name}, function (resp) {
-                                if (resp.code == 0) {
-                                    openToolTips(params.name, resp.data);
-                                } else {
-                                    openToolTips(params.name, resp.msg);
+                                if (resp.code == 0&&resp.data.isshow == 1) {
+                                    openToolTips(params.name, resp.data.context);
                                 }
+                                // else {
+                                //     openToolTips(params.name, resp.msg);
+                                // }
                             })
                         }
                     }
@@ -1180,11 +1182,12 @@ $(function () {
                         if (params.name == caArray[i]) {
                             $.post("/api/community_info", {name: params.name}, function (resp) {
                                 //console.log(resp);
-                                if (resp.code == 0) {
-                                    openToolTips(params.name, resp.data);
-                                } else {
-                                    openToolTips(params.name, resp.msg);
+                                if (resp.code == 0&&resp.data.isshow == 1) {
+                                    openToolTips(params.name, resp.data.context);
                                 }
+                                // else {
+                                //     openToolTips(params.name, resp.msg);
+                                // }
                             })
                         }
                     }
@@ -1553,11 +1556,12 @@ $(function () {
                     for (var i = 0; i < tzArray.length; i++) {
                         if (params.name == tzArray[i]) {
                             $.post("/api/community_info", {name: params.name}, function (resp) {
-                                if (resp.code == 0) {
-                                    openToolTips(params.name, resp.data);
-                                } else {
-                                    openToolTips(params.name, resp.msg);
+                                if (resp.code == 0&&resp.data.isshow == 1) {
+                                    openToolTips(params.name, resp.data.context);
                                 }
+                                // else {
+                                //     openToolTips(params.name, resp.msg);
+                                // }
                             })
                         }
                     }
@@ -1875,11 +1879,12 @@ $(function () {
                     for (var i = 0; i < qzArray.length; i++) {
                         if (params.name == qzArray[i]) {
                             $.post("/api/community_info", {name: params.name}, function (resp) {
-                                if (resp.code == 0) {
-                                    openToolTips(params.name, resp.data);
-                                } else {
-                                    openToolTips(params.name, resp.msg);
+                                if (resp.code == 0&&resp.data.isshow == 1) {
+                                    openToolTips(params.name, resp.data.context);
                                 }
+                                // else {
+                                //     openToolTips(params.name, resp.msg);
+                                // }
                             })
                         }
                     }
@@ -2068,11 +2073,12 @@ $(function () {
                         $('#street').removeClass('layui-hide');
                     }else if(params.componentSubType === 'scatter'){
                         $.post("/api/community_info", {name: params.name}, function (resp) {
-                            if (resp.code == 0) {
-                                openToolTips(params.name, resp.data);
-                            } else {
-                                openToolTips(params.name, resp.msg);
+                            if (resp.code == 0&&resp.data.isshow == 1) {
+                                openToolTips(params.name, resp.data.context);
                             }
+                            // else {
+                            //     openToolTips(params.name, resp.msg);
+                            // }
                         })
                     }
 
@@ -2295,11 +2301,12 @@ $(function () {
                             loadStreet(i);
                         }else if(params.name === gzqArray[i]&&params.componentSubType === 'scatter'){
                             $.post("/api/community_info", {name: params.name}, function (resp) {
-                                if (resp.code == 0) {
-                                    openToolTips(params.name, resp.data);
-                                } else {
-                                    openToolTips(params.name, resp.msg);
+                                if (resp.code == 0&&resp.data.isshow == 1) {
+                                    openToolTips(params.name, resp.data.context);
                                 }
+                                // else {
+                                //     openToolTips(params.name, resp.msg);
+                                // }
                             })
                         }
                     }
