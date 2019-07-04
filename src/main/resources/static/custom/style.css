@@ -61,9 +61,10 @@ body{
     }
     .nav{
         position: absolute;
-        right: 5%;
+        right: 1%;
+        text-align: right;
         top: 10%;
-        width: 100px;
+        width: 200px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -98,9 +99,10 @@ body{
     }
     .nav{
         position: absolute;
-        right: 5%;
+        right: 1%;
         top: 10%;
-        width: 300px;
+        width: 200px;
+        text-align: right;
         display: flex;
         flex-direction: column;
         justify-content: center;
