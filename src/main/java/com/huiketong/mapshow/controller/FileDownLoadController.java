@@ -74,8 +74,8 @@ public class FileDownLoadController {
                 }
             }
         }else{
-            return "nodir.html";
+            return "路径不存在";
         }
-        return "nofile.html";
+        return "文件不存在";
     }
 }
