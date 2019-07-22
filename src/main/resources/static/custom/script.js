@@ -2204,7 +2204,10 @@ $(function () {
                         formatter: function (e) {
                             if (typeof (e.value)[2] == "undefined") {
                                 return e.name;
-                            } else {
+                            }else if(e.name == "港闸区"){
+                                return '<p style="font-size: 15px;color: red;font-weight: bold">街道数</p>' + e.name + ':' + e.value[2] + '所';
+                            }
+                            else {
                                 return '<p style="font-size: 15px;color: red;font-weight: bold"></p>' + e.name + '下辖' + e.value[2] + '家(村)社';
                             }
 
@@ -2287,6 +2290,39 @@ $(function () {
                             },
                             zlevel: 6,
                             data: convertData(data),
+                        },
+                        {
+                            name: '街道数',
+                            type: 'scatter',
+                            coordinateSystem: 'geo',
+                            symbol: 'image://images/star.png',
+                            symbolSize: symbolSize,
+                            label: {
+                                normal: {
+                                    show: true,
+                                    formatter: function (value) {
+                                        return value.data.name
+                                    },
+                                    position: 'bottom',
+                                    textStyle: {
+                                        color: '#fff',
+                                        fontSize: fontSize,
+                                    }
+                                }
+                            },
+                            itemStyle: {
+                                normal: {
+                                    color: '#1C3E64', //标志颜色
+                                }
+                            },
+                            zlevel: 6,
+                            data: [{
+                                name:'港闸区',
+                                value:[
+                                    120.8199119567871,
+                                    32.07821107984135,
+                                    5
+                            ]}],
                         }
                     ]
                 };
@@ -2296,6 +2332,17 @@ $(function () {
                 myChart.on('click', function (params) {
                     //console.log(params);
                     //加载对应的街道
+                    console.log(params.data.name);
+                    if(params.data.name == "港闸区"){
+                        $.post("/api/community_info", {name: params.data.name}, function (resp) {
+                            if (resp.code == 0&&resp.data.isshow == 1) {
+                                openToolTips(params.data.name, resp.data.context);
+                            }
+                            // else {
+                            //     openToolTips(params.name, resp.msg);
+                            // }
+                        })
+                    }
                     for (var i = 0; i < gzqArray.length; i++) {
                         if (params.name === gzqArray[i]&&params.componentSubType === 'map') {
                             loadStreet(i);
@@ -2322,7 +2369,8 @@ $(function () {
     }
 
 
-    loadMainMap();
+    // loadMainMap();
+    loadGZQMap();
     window.onresize = myChart.resize;
     $('#comeback').click(function () {
         loadGZQMap();
@@ -2331,7 +2379,7 @@ $(function () {
     $('#main_btn').click(function (e) {
         $('#street').addClass('layui-hide');
         $('#community').addClass('layui-hide');
-        loadMainMap();
+        loadGZQMap();
     });
     $('#street_btn').click(function (e) {
         $('#community').addClass('layui-hide');
